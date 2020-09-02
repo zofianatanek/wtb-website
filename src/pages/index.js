@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import LogoIconSVG from "../components/LogoIconSVG"
 import Services from "../components/Services/Services"
+import StyledBackgroundSection from "../components/BackgroundSection/BackgroundSection"
 
 const ImageWrapper = styled.div`
   margin: 0 !important;
@@ -24,13 +25,14 @@ const Content = styled.div``
 
 const IndexPage = ({ data }) => (
   <>
-    <ImageWrapper image={data.file.childImageSharp.fluid.src}>
+    {/* <ImageWrapper image={data.file.childImageSharp.fluid.src}>
       {" "}
       <DescriptionWrapper>
         <LogoIconSVG width="200px" height="auto" />
         <h1>WTB Telecom</h1>
       </DescriptionWrapper>
-    </ImageWrapper>
+    </ImageWrapper> */}
+    <StyledBackgroundSection />
     <Content>
       <Services />
     </Content>
