@@ -1,40 +1,20 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
-import LogoIconSVG from "../components/LogoIconSVG"
 import Services from "../components/Services/Services"
+import Resume from "../components/Resume/Resume"
 import StyledBackgroundSection from "../components/BackgroundSection/BackgroundSection"
 
-const ImageWrapper = styled.div`
-  margin: 0 !important;
-  width: 100%;
-  height: 60vh;
-  background-image: url(${({ image }) => image});
-  background-size: cover;
+const Content = styled.div`
+  margin: 20px;
 `
-
-const DescriptionWrapper = styled.div`
-  height: 100%;
-  display: flex;
-  margin-left: 200px;
-  h1 {
-    margin: auto 0;
-  }
-`
-const Content = styled.div``
 
 const IndexPage = ({ data }) => (
   <>
-    {/* <ImageWrapper image={data.file.childImageSharp.fluid.src}>
-      {" "}
-      <DescriptionWrapper>
-        <LogoIconSVG width="200px" height="auto" />
-        <h1>WTB Telecom</h1>
-      </DescriptionWrapper>
-    </ImageWrapper> */}
     <StyledBackgroundSection />
     <Content>
       <Services />
+      <Resume />
     </Content>
   </>
 )

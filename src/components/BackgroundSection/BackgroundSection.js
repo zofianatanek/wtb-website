@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
-
+import LogoIconSVG from "../LogoIconSVG"
 import BackgroundImage from "gatsby-background-image"
 
 const query = graphql`
@@ -16,23 +16,49 @@ const query = graphql`
   }
 `
 
-const BackgroundSection = () => {
+const BrandCardWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 20vh;
+  .LogoIcon {
+    max-width: 240px;
+  }
+  div {
+    margin-left: 28px;
+    h3 {
+      font-size: 24px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 32px;
+    }
+  }
+`
+
+const BackgroundSection = ({ className }) => {
   const data = useStaticQuery(query)
   return (
     <BackgroundImage
-      className="backgroundImg"
+      className={className}
       fluid={data.file.childImageSharp.fluid}
-      style={{ height: "60vh" }}
     >
-      <h1>WTB</h1>
+      <BrandCardWrapper>
+        <LogoIconSVG className="LogoIcon" />
+        <div>
+          <h3>Biuro Projektów</h3>
+          <h1>WTB Telecom</h1>
+        </div>
+      </BrandCardWrapper>
     </BackgroundImage>
   )
 }
 
 const StyledBackgroundSection = styled(BackgroundSection)`
-  .backgroundImg {
-    height: 60vh;
-  }
+  height: 60vh;
+  display: flex;
+  align-items: center;
 `
 
 export default StyledBackgroundSection
