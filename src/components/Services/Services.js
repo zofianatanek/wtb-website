@@ -5,13 +5,15 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
 
-const Header = styled.h2`
+const Header = styled.h1`
   color: #ecad1b;
+  /* text-transform: uppercase; */
 `
 const ServicesWrapper = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 40px;
+  margin: 40px 0;
 `
 
 const Title = styled.div`
@@ -65,6 +67,7 @@ const ImgWrapper = styled.div`
       text-align: right;
       .link {
         color: #ecad1b;
+        margin: 12px;
       }
     }
   }
@@ -100,7 +103,7 @@ const Services = () => {
   console.log(data)
   return (
     <>
-      <Header>Sektory usług:</Header>
+      <Header>Sektory uslug:</Header>
       <ServicesWrapper className="services">
         <ImgWrapper>
           <Overlay className="overlay"></Overlay>

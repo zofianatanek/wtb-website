@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: inherit;
   }
   body {
+
     margin: 0;
     padding: 80px 0;
     font-family: 'Montserrat';
@@ -25,6 +26,9 @@ const GlobalStyle = createGlobalStyle`
   ul {
     padding: 0;
     margin: 0;
+  }
+  h1 {
+    font-weight: bold;
   }
   
 `

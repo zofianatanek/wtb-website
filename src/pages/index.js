@@ -6,7 +6,8 @@ import Resume from "../components/Resume/Resume"
 import StyledBackgroundSection from "../components/BackgroundSection/BackgroundSection"
 
 const Content = styled.div`
-  margin: 20px;
+  margin-left: 0;
+  /* padding: 40px; */
 `
 
 const IndexPage = ({ data }) => (
