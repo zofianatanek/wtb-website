@@ -34,6 +34,7 @@ const BrandCardWrapper = styled.div`
     h1 {
       font-size: 32px;
       font-weight: normal;
+      color: inherit;
     }
   }
 `

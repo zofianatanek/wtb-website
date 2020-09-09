@@ -222,6 +222,7 @@ const StyledMap = styled(Map)`
     animation-duration: 3s;
     animation-delay: 9s;
   }
+  margin-right: 40px;
 `
 
 export default StyledMap

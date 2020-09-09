@@ -1,6 +1,7 @@
 import { createGlobalStyle } from "styled-components"
 
 const GlobalStyle = createGlobalStyle`
+
   html {
     box-sizing: border-box;
   }
@@ -29,6 +30,9 @@ const GlobalStyle = createGlobalStyle`
   }
   h1 {
     font-weight: bold;
+    font-size: 21px;
+    color: #ecad1b;
+    
   }
   
 `

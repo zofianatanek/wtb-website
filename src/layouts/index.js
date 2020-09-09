@@ -3,6 +3,7 @@ import { Layout } from "antd"
 import styled from "styled-components"
 import Navigation from "../components/Navigation/Navigation"
 import GlobalStyle from "../assets/styles/GlobalStyle"
+import DefaultFooter from "../components/Footer/Footer"
 
 const { Footer, Content } = Layout
 
@@ -16,7 +17,9 @@ const MainLayout = ({ children }) => (
     <Layout>
       <Navigation />
       <StyledContent>{children}</StyledContent>
-      <Footer>Footer</Footer>
+      <Footer>
+        <DefaultFooter />
+      </Footer>
     </Layout>
   </>
 )

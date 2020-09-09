@@ -17,6 +17,7 @@ const ResumeWrapper = styled.div`
 `
 const ResumeText = styled.section`
   width: 50vw;
+  margin-top: 40px;
 `
 
 const Resume = () => (

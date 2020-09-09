@@ -5,11 +5,10 @@ import styled from "styled-components"
 import Img from "gatsby-image"
 import { Link } from "gatsby"
 
-const Header = styled.h1`
-  color: #ecad1b;
-  /* text-transform: uppercase; */
+const ServicesWrapper = styled.section`
+  padding: 40px;
 `
-const ServicesWrapper = styled.div`
+const ServicesCategoriesWrapper = styled.section`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 40px;
@@ -102,9 +101,9 @@ const Services = () => {
   const data = useStaticQuery(query)
   console.log(data)
   return (
-    <>
-      <Header>Sektory uslug:</Header>
-      <ServicesWrapper className="services">
+    <ServicesWrapper>
+      <h1>Sektory uslug</h1>
+      <ServicesCategoriesWrapper className="services">
         <ImgWrapper>
           <Overlay className="overlay"></Overlay>
           <Title className="title">
@@ -141,11 +140,8 @@ const Services = () => {
           </Title>
           <Img fixed={data.image3.childImageSharp.fixed} />
         </ImgWrapper>
-      </ServicesWrapper>
-
-      {/* <img src={data.image1.childImageSharp.fluid.src} />
-      <img src={data.image2.childImageSharp.fluid.src} /> */}
-    </>
+      </ServicesCategoriesWrapper>
+    </ServicesWrapper>
   )
 }
 
