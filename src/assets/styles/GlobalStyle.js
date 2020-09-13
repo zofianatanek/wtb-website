@@ -31,7 +31,7 @@ const GlobalStyle = createGlobalStyle`
   h1 {
     font-weight: bold;
     font-size: 21px;
-    color: #ecad1b;
+    color: ${({ theme }) => theme.colors.text.title};
     
   }
   

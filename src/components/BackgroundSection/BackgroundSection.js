@@ -1,7 +1,7 @@
 import React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import styled from "styled-components"
-import LogoIconSVG from "../LogoIconSVG"
+import LogoIconSVG from "../SVGs/LogoIconSVG"
 import BackgroundImage from "gatsby-background-image"
 
 const query = graphql`

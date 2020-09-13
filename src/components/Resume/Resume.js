@@ -6,7 +6,7 @@ const ResumeSection = styled.div`
   padding: 40px 40px;
   box-sizing: border-box;
   margin: 60px 0px;
-  background-color: #f0f2f5;
+  background-color: ${({ theme }) => theme.colors.background.dark};
   width: 100vw;
 `
 const ResumeWrapper = styled.div`

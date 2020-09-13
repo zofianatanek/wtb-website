@@ -1,9 +1,8 @@
 import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import { RightOutlined } from "@ant-design/icons"
 import styled from "styled-components"
+import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
-import { Link } from "gatsby"
+import { RightOutlined } from "@ant-design/icons"
 
 const ServicesWrapper = styled.section`
   padding: 40px;
@@ -23,7 +22,7 @@ const Title = styled.div`
   display: flex;
   flex-direction: column;
   h3 {
-    color: #ecad1b;
+    color: ${({ theme }) => theme.colors.text.title};
     transition: 0.5s ease-in-out;
   }
   p {
@@ -32,7 +31,7 @@ const Title = styled.div`
 `
 
 const Overlay = styled.div`
-  background-color: black;
+  background-color: #000000;
   opacity: 70%;
   overflow: hidden;
   z-index: 1;
@@ -65,7 +64,7 @@ const ImgWrapper = styled.div`
       display: block;
       text-align: right;
       .link {
-        color: #ecad1b;
+        color: ${({ theme }) => theme.colors.text.title};
         margin: 12px;
       }
     }
@@ -99,7 +98,6 @@ const query = graphql`
 
 const Services = () => {
   const data = useStaticQuery(query)
-  console.log(data)
   return (
     <ServicesWrapper>
       <h1>Sektory uslug</h1>

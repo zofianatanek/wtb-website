@@ -1,7 +1,7 @@
 import React from "react"
 import styled from "styled-components"
 import { Link } from "gatsby"
-import LogoSVG from "../LogoSVG"
+import LogoSVG from "../SVGs/LogoSVG"
 
 const NavigationWrapper = styled.nav`
   box-sizing: border-box;
@@ -18,7 +18,7 @@ const NavigationWrapper = styled.nav`
     text-decoration: none;
     color: inherit;
     &:hover {
-      color: #ecad1b;
+      color: ${({ theme }) => theme.colors.text.title};
     }
   }
 `

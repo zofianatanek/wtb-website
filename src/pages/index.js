@@ -7,7 +7,6 @@ import BackgroundSection from "../components/BackgroundSection/BackgroundSection
 
 const Content = styled.div`
   margin-left: 0;
-  /* padding: 40px; */
 `
 
 const IndexPage = ({ data }) => (
