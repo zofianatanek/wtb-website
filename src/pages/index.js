@@ -3,7 +3,7 @@ import { graphql } from "gatsby"
 import styled from "styled-components"
 import Services from "../components/Services/Services"
 import Resume from "../components/Resume/Resume"
-import StyledBackgroundSection from "../components/BackgroundSection/BackgroundSection"
+import BackgroundSection from "../components/BackgroundSection/BackgroundSection"
 
 const Content = styled.div`
   margin-left: 0;
@@ -12,7 +12,7 @@ const Content = styled.div`
 
 const IndexPage = ({ data }) => (
   <>
-    <StyledBackgroundSection />
+    <BackgroundSection />
     <Content>
       <Services />
       <Resume />

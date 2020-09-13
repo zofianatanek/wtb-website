@@ -38,14 +38,16 @@ const BrandCardWrapper = styled.div`
     }
   }
 `
+const StyledBackgroundImage = styled(BackgroundImage)`
+  height: 60vh;
+  display: flex;
+  align-items: center;
+`
 
-const BackgroundSection = ({ className }) => {
+const BackgroundSection = () => {
   const data = useStaticQuery(query)
   return (
-    <BackgroundImage
-      className={className}
-      fluid={data.file.childImageSharp.fluid}
-    >
+    <StyledBackgroundImage fluid={data.file.childImageSharp.fluid}>
       <BrandCardWrapper>
         <LogoIconSVG className="LogoIcon" />
         <div>
@@ -53,14 +55,8 @@ const BackgroundSection = ({ className }) => {
           <h1>WTB Telecom</h1>
         </div>
       </BrandCardWrapper>
-    </BackgroundImage>
+    </StyledBackgroundImage>
   )
 }
 
-const StyledBackgroundSection = styled(BackgroundSection)`
-  height: 60vh;
-  display: flex;
-  align-items: center;
-`
-
-export default StyledBackgroundSection
+export default BackgroundSection
