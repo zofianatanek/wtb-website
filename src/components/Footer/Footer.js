@@ -9,13 +9,24 @@ const FooterWrapper = styled.div`
   align-items: flex-end;
 `
 const AdressWrapper = styled.div`
-  display: block;
+  h3 {
+    font-size: 16px;
+    font-weight: ${({ theme }) => theme.fonts.bold};
+  }
+  h4 {
+    font-size: 14px;
+    font-weight: ${({ theme }) => theme.fonts.bold};
+  }
   p {
     margin: 0;
+    font-size: 12px;
   }
 `
 const CompanyDataWrapper = styled.div`
   color: #adadad;
+  position: relative;
+  right: 50px;
+  font-size: 12px;
   ul {
     list-style-type: none;
   }
@@ -27,9 +38,14 @@ const ContactWrapper = styled.div`
       :first-child {
         color: ${({ theme }) => theme.colors.text.title};
         font-size: 18px;
-        font-weight: ${({ theme }) => theme.font.bold};
+        font-weight: ${({ theme }) => theme.fonts.bold};
+        margin-bottom: 8px;
       }
       color: ${({ theme }) => theme.colors.text.primary};
+      &.header {
+        font-size: 14px;
+      }
+      font-size: 12px;
     }
   }
 `
@@ -41,7 +57,7 @@ const WebsiteMapWrapper = styled.div`
         a {
           color: ${({ theme }) => theme.colors.text.title};
           font-size: 18px;
-          font-weight: ${({ theme }) => theme.font.bold};
+          font-weight: ${({ theme }) => theme.fonts.bold};
         }
       }
       a {
@@ -76,9 +92,9 @@ const DefaultFooter = () => {
       <ContactWrapper>
         <ul>
           <li>Skontaktuj sie z nami</li>
-          <li>Tel:</li>
+          <li className="header">Tel:</li>
           <li>792 719 623</li>
-          <li>E-mail:</li>
+          <li className="header">E-mail:</li>
           <li>biuro@wwtb.pl</li>
         </ul>
       </ContactWrapper>

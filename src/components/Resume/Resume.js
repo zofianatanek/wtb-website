@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import StyledMap from "./Map"
+import Map from "./Map"
 
 const ResumeSection = styled.div`
   padding: 40px 40px;
@@ -47,7 +47,7 @@ const Resume = () => (
             urna nunc id cursus.
           </p>
         </ResumeText>
-        <StyledMap />
+        <Map />
       </ResumeWrapper>
     </ResumeSection>
   </>

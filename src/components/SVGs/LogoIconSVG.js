@@ -8,7 +8,7 @@ function LogoIconSVG(props) {
           <path d="M0 0H405V205H0z"></path>
         </clipPath>
       </defs>
-      <g clip-path="url(#clip-Artboard_1)" data-name="Artboard – 1">
+      <g clipPath="url(#clip-Artboard_1)" data-name="Artboard – 1">
         <circle
           cx="20.5"
           cy="20.5"

@@ -1,9 +1,10 @@
 import React from "react"
 import { graphql } from "gatsby"
 import styled from "styled-components"
+import BackgroundSection from "../components/BackgroundSection/BackgroundSection"
 import Services from "../components/Services/Services"
 import Resume from "../components/Resume/Resume"
-import BackgroundSection from "../components/BackgroundSection/BackgroundSection"
+import Partners from "../components/Partners/Partners"
 
 const Content = styled.div`
   margin-left: 0;
@@ -15,6 +16,7 @@ const IndexPage = ({ data }) => (
     <Content>
       <Services />
       <Resume />
+      <Partners />
     </Content>
   </>
 )
