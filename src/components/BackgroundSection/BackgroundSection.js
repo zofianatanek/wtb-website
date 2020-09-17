@@ -1,12 +1,19 @@
-import React from "react"
+import React, { useContext } from "react"
 import { graphql, useStaticQuery } from "gatsby"
-import styled from "styled-components"
+import styled, { ThemeContext } from "styled-components"
 import LogoIconSVG from "../SVGs/LogoIconSVG"
 import BackgroundImage from "gatsby-background-image"
 
 const query = graphql`
   {
-    file(name: { eq: "office" }) {
+    backgroundDesktop: file(name: { eq: "office" }) {
+      childImageSharp {
+        fluid(maxWidth: 1920, quality: 100) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    backgroundMobile: file(name: { eq: "officeMobile" }) {
       childImageSharp {
         fluid(maxWidth: 1920, quality: 100) {
           ...GatsbyImageSharpFluid
@@ -46,8 +53,16 @@ const StyledBackgroundImage = styled(BackgroundImage)`
 
 const BackgroundSection = () => {
   const data = useStaticQuery(query)
+  const theme = useContext(ThemeContext)
+  const sources = [
+    data.backgroundMobile.childImageSharp.fluid,
+    {
+      ...data.backgroundDesktop.childImageSharp.fluid,
+      media: `${theme.device.md}`,
+    },
+  ]
   return (
-    <StyledBackgroundImage fluid={data.file.childImageSharp.fluid}>
+    <StyledBackgroundImage fluid={sources}>
       <BrandCardWrapper>
         <LogoIconSVG className="LogoIcon" />
         <div>

@@ -8,10 +8,16 @@ const ServicesWrapper = styled.section`
   padding: 40px;
 `
 const ServicesCategoriesWrapper = styled.section`
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-gap: 40px;
   margin: 40px 0;
+  @media ${({ theme }) => theme.device.xs} {
+    display: flex;
+    flex-direction: column;
+  }
+  @media ${({ theme }) => theme.device.sm} {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+  }
 `
 
 const Title = styled.div`
