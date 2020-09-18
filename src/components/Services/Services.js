@@ -10,12 +10,14 @@ const ServicesWrapper = styled.section`
 const ServicesCategoriesWrapper = styled.section`
   margin: 40px 0;
   @media ${({ theme }) => theme.device.xs} {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-gap: 32px;
   }
-  @media ${({ theme }) => theme.device.sm} {
+  @media ${({ theme }) => theme.device.xl} {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(1, auto);
     grid-gap: 40px;
   }
 `
@@ -49,6 +51,7 @@ const Overlay = styled.div`
 const ImgWrapper = styled.div`
   margin-left: auto;
   margin-right: auto;
+
   &:hover {
     .title {
       display: flex;

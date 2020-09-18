@@ -23,17 +23,46 @@ const query = graphql`
   }
 `
 
-const BrandCardWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 20vh;
-  .LogoIcon {
-    max-width: 240px;
+const BrandWrapper = styled.section`
+  margin-bottom: 60px;
+  @media ${({ theme }) => theme.device.xs} {
+    display: flex;
+    align-items: center;
+    .LogoIcon {
+      width: 150px;
+      height: 80px;
+      margin-right: 10px;
+    }
   }
-  div {
-    margin-left: 28px;
+  @media ${({ theme }) => theme.device.md} {
+    display: flex;
+    align-items: center;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 20vh;
+    .LogoIcon {
+      width: 240px;
+      height: auto;
+    }
+  }
+`
+
+const Brand = styled.div`
+  @media ${({ theme }) => theme.device.xs} {
+    margin-left: 10px;
+    h3 {
+      font-size: 16px;
+      text-align: center;
+      margin: 0;
+    }
+    h1 {
+      font-size: 24px;
+      font-weight: normal;
+      color: inherit;
+      margin: 0;
+    }
+  }
+  @media ${({ theme }) => theme.device.md} {
     h3 {
       font-size: 24px;
       text-align: center;
@@ -47,8 +76,20 @@ const BrandCardWrapper = styled.div`
 `
 const StyledBackgroundImage = styled(BackgroundImage)`
   height: 60vh;
-  display: flex;
-  align-items: center;
+  @media ${({ theme }) => theme.device.xs} {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+  }
+  @media ${({ theme }) => theme.device.md} {
+    display: flex;
+    justify-content: left;
+  }
+  @media ${({ theme }) => theme.device.lg} {
+    display: flex;
+    align-items: center;
+    justify-content: left;
+  }
 `
 
 const BackgroundSection = () => {
@@ -63,13 +104,13 @@ const BackgroundSection = () => {
   ]
   return (
     <StyledBackgroundImage fluid={sources}>
-      <BrandCardWrapper>
+      <BrandWrapper>
         <LogoIconSVG className="LogoIcon" />
-        <div>
+        <Brand>
           <h3>Biuro Projektów</h3>
           <h1>WTB Telecom</h1>
-        </div>
-      </BrandCardWrapper>
+        </Brand>
+      </BrandWrapper>
     </StyledBackgroundImage>
   )
 }

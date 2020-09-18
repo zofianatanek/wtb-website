@@ -2,22 +2,35 @@ import React from "react"
 import styled from "styled-components"
 import Map from "./Map"
 
-const ResumeSection = styled.div`
+const ResumeSection = styled.section`
   padding: 40px 40px;
   box-sizing: border-box;
   margin: 60px 0px;
   background-color: ${({ theme }) => theme.colors.background.dark};
   width: 100vw;
 `
-const ResumeWrapper = styled.div`
-  padding-left: 40px;
-  padding-right: 60px;
-  display: flex;
-  justify-content: space-between;
+const ResumeWrapper = styled.section`
+  @media ${({ theme }) => theme.device.sm} {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  @media ${({ theme }) => theme.device.xl} {
+    padding-left: 40px;
+    padding-right: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
 `
 const ResumeText = styled.section`
-  width: 50vw;
   margin-top: 40px;
+  @media ${({ theme }) => theme.device.xs} {
+    width: 100%;
+  }
+  @media ${({ theme }) => theme.device.xl} {
+    width: 50vw;
+  }
 `
 
 const Resume = () => (
