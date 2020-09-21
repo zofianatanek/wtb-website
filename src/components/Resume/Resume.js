@@ -25,6 +25,7 @@ const ResumeWrapper = styled.section`
 `
 const ResumeText = styled.section`
   margin-top: 40px;
+  text-align: justify;
   @media ${({ theme }) => theme.device.xs} {
     width: 100%;
   }
