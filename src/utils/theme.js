@@ -39,4 +39,5 @@ export const theme = {
   colors,
   fonts,
   device,
+  breakpoints,
 }

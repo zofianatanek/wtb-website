@@ -3,67 +3,91 @@ import styled from "styled-components"
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
-const ImageWrapper = styled.div`
-  width: 500px;
+const PartnersSection = styled.section`
+  text-align: center;
+  padding: 40px;
+  h1 {
+    text-align: left;
+  }
+`
+const ImageWrapper = styled.ul`
+  max-width: 1200px;
   white-space: nowrap;
   overflow-x: scroll;
   overflow-y: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  display: flex;
+  ::-webkit-scrollbar {
+  }
+  li {
+    display: flex;
+    margin: 0 40px;
+    align-items: center;
+  }
 `
 
 const query = graphql`
   {
     orange: file(name: { eq: "orange" }) {
       childImageSharp {
-        fixed(width: 100, quality: 100) {
+        fixed(width: 64, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
     }
     tauron: file(name: { eq: "tauron" }) {
       childImageSharp {
-        fixed(width: 100, quality: 100) {
+        fixed(width: 64, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
     }
     netia: file(name: { eq: "netia" }) {
       childImageSharp {
-        fixed(width: 100, quality: 100) {
+        fixed(width: 216, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
     }
     mx3: file(name: { eq: "mx3" }) {
       childImageSharp {
-        fixed(width: 100, quality: 100) {
+        fixed(width: 159, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
     }
     ecs: file(name: { eq: "ecs" }) {
       childImageSharp {
-        fixed(width: 100, quality: 100) {
+        fixed(width: 253, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
     }
     nexotech: file(name: { eq: "nexotech" }) {
       childImageSharp {
-        fixed(width: 100, quality: 100) {
+        fixed(width: 191, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
     }
     teltech: file(name: { eq: "teltech" }) {
       childImageSharp {
-        fixed(width: 100, quality: 100) {
+        fixed(width: 219, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
     }
     syscom: file(name: { eq: "syscom" }) {
       childImageSharp {
-        fixed(width: 100, quality: 100) {
+        fixed(width: 240, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    maxinvest: file(name: { eq: "maxinvest" }) {
+      childImageSharp {
+        fixed(width: 166, quality: 100) {
           ...GatsbyImageSharpFixed
         }
       }
@@ -74,19 +98,43 @@ const query = graphql`
 const Partners = () => {
   const data = useStaticQuery(query)
   return (
-    <>
+    <PartnersSection>
       <h1>Partnerzy</h1>
       <ImageWrapper>
-        <Img fixed={data.orange.childImageSharp.fixed} />
-        <Img fixed={data.tauron.childImageSharp.fixed} />
-        <Img fixed={data.netia.childImageSharp.fixed} />
-        <Img fixed={data.mx3.childImageSharp.fixed} />
-        <Img fixed={data.ecs.childImageSharp.fixed} />
-        <Img fixed={data.nexotech.childImageSharp.fixed} />
-        <Img fixed={data.teltech.childImageSharp.fixed} />
-        <Img fixed={data.syscom.childImageSharp.fixed} />
+        <li>
+          {" "}
+          <Img fixed={data.orange.childImageSharp.fixed} />
+        </li>
+        <li>
+          <Img fixed={data.tauron.childImageSharp.fixed} />
+        </li>
+        <li>
+          <Img fixed={data.netia.childImageSharp.fixed} />
+        </li>
+        <li>
+          <Img fixed={data.teltech.childImageSharp.fixed} />
+        </li>
+        <li>
+          {" "}
+          <Img fixed={data.ecs.childImageSharp.fixed} />
+        </li>
+        <li>
+          {" "}
+          <Img fixed={data.mx3.childImageSharp.fixed} />
+        </li>
+        <li>
+          <Img fixed={data.nexotech.childImageSharp.fixed} />
+        </li>
+        <li>
+          {" "}
+          <Img fixed={data.syscom.childImageSharp.fixed} />
+        </li>
+        <li>
+          {" "}
+          <Img fixed={data.maxinvest.childImageSharp.fixed} />
+        </li>
       </ImageWrapper>
-    </>
+    </PartnersSection>
   )
 }
 

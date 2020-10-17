@@ -1,8 +1,60 @@
-import React from "react"
-import styled from "styled-components"
+import React, { useContext } from "react"
+import styled, { ThemeContext } from "styled-components"
 import { graphql, useStaticQuery, Link } from "gatsby"
 import Img from "gatsby-image"
 import { RightOutlined } from "@ant-design/icons"
+
+const query = graphql`
+  {
+    image1Small: file(name: { eq: "telecom" }) {
+      childImageSharp {
+        fixed(width: 380, height: 204, quality: 100, grayscale: true) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    image2Small: file(name: { eq: "radio" }) {
+      childImageSharp {
+        fixed(width: 380, height: 204, quality: 100, grayscale: true) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    image3Small: file(name: { eq: "signs" }) {
+      childImageSharp {
+        fixed(width: 380, height: 204, quality: 100, grayscale: true) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    image1Big: file(name: { eq: "telecom" }) {
+      childImageSharp {
+        fixed(width: 580, quality: 100, grayscale: true) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    image2Big: file(name: { eq: "radio" }) {
+      childImageSharp {
+        fixed(width: 580, height: 326, quality: 100, grayscale: true) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    image3Big: file(name: { eq: "signs" }) {
+      childImageSharp {
+        fixed(width: 580, quality: 100, grayscale: true) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`
 
 const ServicesWrapper = styled.section`
   padding: 40px;
@@ -32,6 +84,7 @@ const Title = styled.div`
   h3 {
     color: ${({ theme }) => theme.colors.text.title};
     transition: 0.5s ease-in-out;
+    background-color: rgba(1, 1, 1, 0.6);
   }
   p {
     display: none;
@@ -58,16 +111,33 @@ const ImgWrapper = styled.div`
       margin: 0;
       width: 380px;
       height: 204px;
+      @media ${({ theme }) => theme.device.sm} {
+        height: 326px;
+        width: 580px;
+      }
+      @media ${({ theme }) => theme.device.xl} {
+        height: 204px;
+        width: 380px;
+      }
       h3 {
         text-align: center;
         font-size: 32px;
         margin: auto;
         width: auto;
+        background-color: rgba(1, 1, 1, 0);
       }
     }
     .overlay {
       height: 204px;
       width: 380px;
+      @media ${({ theme }) => theme.device.sm} {
+        height: 326px;
+        width: 580px;
+      }
+      @media ${({ theme }) => theme.device.xl} {
+        height: 204px;
+        width: 380px;
+      }
     }
     .more {
       display: block;
@@ -79,34 +149,43 @@ const ImgWrapper = styled.div`
     }
   }
 `
-const query = graphql`
-  {
-    image1: file(name: { eq: "telecom" }) {
-      childImageSharp {
-        fixed(width: 380, height: 204, quality: 100, grayscale: true) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    image2: file(name: { eq: "radio" }) {
-      childImageSharp {
-        fixed(width: 380, height: 204, quality: 100, grayscale: true) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-    image3: file(name: { eq: "signs" }) {
-      childImageSharp {
-        fixed(width: 380, height: 204, quality: 100, grayscale: true) {
-          ...GatsbyImageSharpFixed
-        }
-      }
-    }
-  }
-`
 
 const Services = () => {
   const data = useStaticQuery(query)
+  const theme = useContext(ThemeContext)
+  const imageTelecom = [
+    data.image1Small.childImageSharp.fixed,
+    {
+      ...data.image1Big.childImageSharp.fixed,
+      media: `(min-width: ${theme.breakpoints.sm}) and (max-width: ${theme.breakpoints.xl})`,
+    },
+    {
+      ...data.image1Small.childImageSharp.fixed,
+      media: `${theme.device.xl}`,
+    },
+  ]
+  const imageRadio = [
+    data.image2Small.childImageSharp.fixed,
+    {
+      ...data.image2Big.childImageSharp.fixed,
+      media: `(min-width: ${theme.breakpoints.sm}) and (max-width: ${theme.breakpoints.xl})`,
+    },
+    {
+      ...data.image2Small.childImageSharp.fixed,
+      media: `${theme.device.xl}`,
+    },
+  ]
+  const imageCivilEngineering = [
+    data.image3Small.childImageSharp.fixed,
+    {
+      ...data.image3Big.childImageSharp.fixed,
+      media: `(min-width: ${theme.breakpoints.sm}) and (max-width: ${theme.breakpoints.xl})`,
+    },
+    {
+      ...data.image3Small.childImageSharp.fixed,
+      media: `${theme.device.xl}`,
+    },
+  ]
   return (
     <ServicesWrapper>
       <h1>Sektory uslug</h1>
@@ -121,7 +200,7 @@ const Services = () => {
               </Link>
             </p>
           </Title>
-          <Img fixed={data.image1.childImageSharp.fixed} />
+          <Img fixed={imageTelecom} />
         </ImgWrapper>
         <ImgWrapper>
           <Overlay className="overlay"></Overlay>
@@ -133,7 +212,7 @@ const Services = () => {
               </Link>
             </p>
           </Title>
-          <Img fixed={data.image2.childImageSharp.fixed} />
+          <Img fixed={imageRadio} />
         </ImgWrapper>
         <ImgWrapper>
           <Overlay className="overlay"></Overlay>
@@ -145,7 +224,7 @@ const Services = () => {
               </Link>
             </p>
           </Title>
-          <Img fixed={data.image3.childImageSharp.fixed} />
+          <Img fixed={imageCivilEngineering} />
         </ImgWrapper>
       </ServicesCategoriesWrapper>
     </ServicesWrapper>

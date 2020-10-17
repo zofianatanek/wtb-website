@@ -16,7 +16,7 @@ const IndexPage = ({ data }) => (
     <Content>
       <Services />
       <Resume />
-      {/* <Partners /> */}
+      <Partners />
     </Content>
   </>
 )
