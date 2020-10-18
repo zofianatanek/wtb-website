@@ -10,6 +10,7 @@ const { Footer, Content } = Layout
 
 const StyledContent = styled(Content)`
   background-color: ${({ theme }) => theme.colors.background.primary};
+  margin-top: 72px;
 `
 
 const MainLayout = ({ children }) => (

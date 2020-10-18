@@ -69,7 +69,18 @@ const StyledMap = styled.svg`
 `
 class Map extends React.Component {
   state = {
-    animation: "on",
+    animation: true,
+  }
+
+  componentDidMount() {
+    this.timerID = setInterval(
+      () => {
+        this.setState({ animation: !this.state.animation })
+        console.log(this.state)
+      },
+
+      3000
+    )
   }
 
   render() {

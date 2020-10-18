@@ -1,7 +1,7 @@
 import React from "react"
 import { Helmet } from "react-helmet"
 
-const Map = () => {
+const GoogleMap = () => {
   if (typeof window !== "undefined") {
     window.initMap = function () {
       const wtb = { lat: 51.10724, lng: 17.018846 }
@@ -18,11 +18,7 @@ const Map = () => {
   return (
     <>
       <Helmet>
-        <script
-          src="https://maps.googleapis.com/maps/api/js?key=AIzaSyC51WrMRCAHKQMgwMGHv8aU3BjnsNpgelc&callback=initMap"
-          async
-          defer
-        />
+        <script src={`${process.env.GATSBY_API_URL}`} async defer />
       </Helmet>
       <div>
         <div id="map" style={{ height: "500px", width: "500px" }}></div>
@@ -31,4 +27,4 @@ const Map = () => {
   )
 }
 
-export default Map
+export default GoogleMap
