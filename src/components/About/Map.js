@@ -2,9 +2,6 @@ import React from "react"
 import styled from "styled-components"
 
 const StyledMap = styled.svg`
-  /* .area:hover {
-    fill: #ecad1b;
-  } */
   @keyframes color {
     from {
       fill: #b6bac0;
@@ -16,52 +13,45 @@ const StyledMap = styled.svg`
       fill: #ecad1b;
     }
   }
-  #lubuskie {
+  .active {
     animation-name: color;
+  }
+  #lubuskie {
     animation-duration: 12s;
   }
   #dolnoslaskie {
-    animation-name: color;
     animation-duration: 11s;
     animation-delay: 1s;
   }
   #wielkopolskie {
-    animation-name: color;
     animation-duration: 10s;
     animation-delay: 2s;
   }
   #opolskie {
-    animation-name: color;
     animation-duration: 9s;
     animation-delay: 3s;
   }
   #slaskie {
-    animation-name: color;
     animation-duration: 8s;
     animation-delay: 4s;
   }
   #lodzkie {
-    animation-name: color;
     animation-duration: 7s;
     animation-delay: 5s;
   }
   #swietokrzyskie {
-    animation-name: color;
     animation-duration: 6s;
     animation-delay: 6s;
   }
   #malopolskie {
-    animation-name: color;
     animation-duration: 5s;
     animation-delay: 7s;
   }
   #podkarpackie {
-    animation-name: color;
     animation-duration: 4s;
     animation-delay: 8s;
   }
   #lubelskie {
-    animation-name: color;
     animation-duration: 3s;
     animation-delay: 9s;
   }
@@ -73,14 +63,13 @@ class Map extends React.Component {
   }
 
   componentDidMount() {
-    this.timerID = setInterval(
-      () => {
-        this.setState({ animation: !this.state.animation })
-        console.log(this.state)
-      },
+    this.timerID = setInterval(() => {
+      this.SwitchState()
+    }, 12000)
+  }
 
-      3000
-    )
+  SwitchState() {
+    this.setState({ animation: !this.state.animation })
   }
 
   render() {
@@ -107,6 +96,9 @@ class Map extends React.Component {
             <path
               className="area"
               id="swietokrzyskie"
+              className={`${
+                this.state.animation == true ? "active" : "disabled"
+              }`}
               stroke="#F9F9F9"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -116,6 +108,9 @@ class Map extends React.Component {
             <path
               className="area"
               id="slaskie"
+              className={`${
+                this.state.animation == true ? "active" : "disabled"
+              }`}
               stroke="#F9F9F9"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -161,6 +156,9 @@ class Map extends React.Component {
             <path
               className="area"
               id="opolskie"
+              className={`${
+                this.state.animation == true ? "active" : "disabled"
+              }`}
               stroke="#F9F9F9"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -170,6 +168,9 @@ class Map extends React.Component {
             <path
               className="area"
               id="lubuskie"
+              className={`${
+                this.state.animation == true ? "active" : "disabled"
+              }`}
               stroke="#F9F9F9"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -187,6 +188,9 @@ class Map extends React.Component {
             <path
               className="area"
               id="dolnoslaskie"
+              className={`${
+                this.state.animation == true ? "active" : "disabled"
+              }`}
               stroke="#F9F9F9"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -196,6 +200,9 @@ class Map extends React.Component {
             <path
               className="area"
               id="lodzkie"
+              className={`${
+                this.state.animation == true ? "active" : "disabled"
+              }`}
               stroke="#F9F9F9"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -205,6 +212,9 @@ class Map extends React.Component {
             <path
               className="area"
               id="malopolskie"
+              className={`${
+                this.state.animation == true ? "active" : "disabled"
+              }`}
               stroke="#F9F9F9"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -222,6 +232,9 @@ class Map extends React.Component {
             <path
               className="area"
               id="wielkopolskie"
+              className={`${
+                this.state.animation == true ? "active" : "disabled"
+              }`}
               stroke="#F9F9F9"
               strokeLinecap="round"
               strokeLinejoin="round"

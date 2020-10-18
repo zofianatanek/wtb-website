@@ -2,14 +2,13 @@ import React from "react"
 import styled from "styled-components"
 import Map from "./Map"
 
-const ResumeSection = styled.section`
+const AboutSection = styled.section`
   padding: 40px 40px;
   box-sizing: border-box;
   margin: 60px 0px;
   background-color: ${({ theme }) => theme.colors.background.dark};
-  width: 100vw;
 `
-const ResumeWrapper = styled.section`
+const AboutWrapper = styled.section`
   @media ${({ theme }) => theme.device.sm} {
     display: flex;
     flex-direction: column;
@@ -23,7 +22,7 @@ const ResumeWrapper = styled.section`
     justify-content: space-between;
   }
 `
-const ResumeText = styled.section`
+const AboutText = styled.section`
   margin-top: 40px;
   text-align: justify;
   @media ${({ theme }) => theme.device.xs} {
@@ -34,12 +33,12 @@ const ResumeText = styled.section`
   }
 `
 
-const Resume = () => (
+const About = () => (
   <>
-    <ResumeSection>
-      <h1>Resume</h1>
-      <ResumeWrapper>
-        <ResumeText>
+    <AboutSection>
+      <h1>O firmie</h1>
+      <AboutWrapper>
+        <AboutText>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed enim
@@ -60,11 +59,11 @@ const Resume = () => (
             etiam tempor orci eu lobortis. Nulla aliquet enim tortor at auctor
             urna nunc id cursus.
           </p>
-        </ResumeText>
+        </AboutText>
         <Map />
-      </ResumeWrapper>
-    </ResumeSection>
+      </AboutWrapper>
+    </AboutSection>
   </>
 )
 
-export default Resume
+export default About
