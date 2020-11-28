@@ -44,7 +44,7 @@ const MenuIcon = styled.button`
 `
 
 const NavigationWrapper = styled.nav`
-  position: fixed;
+  position: sticky;
   background-color: ${({ theme }) => theme.colors.background.primary};
   width: 100%;
   z-index: 2;
@@ -58,6 +58,9 @@ const NavigationWrapper = styled.nav`
   }
 
   @media ${({ theme }) => theme.device.xs} {
+    top: 0px;
+    position: sticky;
+    z-index: 2;
     height: 72px;
     display: flex;
     align-items: center;
@@ -72,7 +75,6 @@ const NavigationWrapper = styled.nav`
     align-items: center;
     justify-content: flex-start;
     height: 72px;
-    font-family: "Montserrat";
   }
 `
 const NavigationOverlay = styled.div`
@@ -131,9 +133,6 @@ const Navigation = () => {
       <NavigationList>
         <NavigationListItem>
           <Link to="/">Strona główna</Link>
-        </NavigationListItem>
-        <NavigationListItem>
-          <Link to="/about">O nas</Link>
         </NavigationListItem>
         <NavigationListItem>
           <Link to="/projects">Projekty</Link>

@@ -64,6 +64,9 @@ class Map extends React.Component {
 
   componentDidMount() {
     this.timerID = setInterval(() => {
+      setTimeout(() => {
+        this.SwitchState()
+      }, 2000)
       this.SwitchState()
     }, 12000)
   }

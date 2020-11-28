@@ -2,6 +2,7 @@ const colors = {
   background: {
     primary: "#ffffff",
     dark: "#f0f2f5",
+    gold: "#DCB354",
   },
   text: {
     title: "#ecad1b",

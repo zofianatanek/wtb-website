@@ -4,34 +4,89 @@ import { Link } from "gatsby"
 import LogoSVG from "../SVGs/LogoSVG"
 
 const FooterWrapper = styled.div`
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-end;
+  max-height: 200px;
+  @media ${({ theme }) => theme.device.xs} {
+    width: 100%;
+    height: 100%;
+    background-color: ${({ theme }) => theme.colors.background.dark};
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 0.75fr 0.5fr;
+    padding: 12px;
+  }
+  @media ${({ theme }) => theme.device.lg} {
+    display: flex;
+    background-color: ${({ theme }) => theme.colors.background.dark};
+    justify-content: space-around;
+    align-items: flex-end;
+    width: 100%;
+    padding: 32px;
+  }
 `
+const Logo = styled(LogoSVG)`
+  @media ${({ theme }) => theme.device.xs} {
+    width: 150px;
+  }
+  @media ${({ theme }) => theme.device.sm} {
+    width: 200px;
+  }
+  @media ${({ theme }) => theme.device.md} {
+    width: 250px;
+  }
+  height: auto;
+  justify-self: center;
+`
+
 const AdressWrapper = styled.div`
+  align-self: center;
+  justify-self: center;
   h3 {
-    font-size: 16px;
     font-weight: ${({ theme }) => theme.fonts.bold};
   }
   h4 {
-    font-size: 14px;
     font-weight: ${({ theme }) => theme.fonts.bold};
   }
   p {
     margin: 0;
-    font-size: 12px;
+  }
+  @media ${({ theme }) => theme.device.lg} {
+    h3 {
+      font-size: 14px;
+    }
+    h4 {
+      font-size: 12px;
+    }
+    p {
+      font-size: 10px;
+    }
+  }
+  @media ${({ theme }) => theme.device.xxl} {
+    h3 {
+      font-size: 16px;
+    }
+    h4 {
+      font-size: 14px;
+    }
+    p {
+      font-size: 12px;
+    }
   }
 `
 const CompanyDataWrapper = styled.div`
-  color: #adadad;
-  position: relative;
-  right: 50px;
-  font-size: 12px;
-  ul {
-    list-style-type: none;
+  @media ${({ theme }) => theme.device.xs} {
+    display: none;
+  }
+  @media ${({ theme }) => theme.device.lg} {
+    color: #adadad;
+    position: relative;
+    right: 50px;
+    font-size: 12px;
+    ul {
+      list-style-type: none;
+    }
   }
 `
-const ContactWrapper = styled.div`
+const FullContactWrapper = styled.div`
   ul {
     list-style-type: none;
     li {
@@ -48,8 +103,43 @@ const ContactWrapper = styled.div`
       font-size: 12px;
     }
   }
+  @media ${({ theme }) => theme.device.xs} {
+    display: none;
+  }
+  @media ${({ theme }) => theme.device.lg} {
+    display: block;
+  }
 `
+const ShortContactWrapper = styled.div`
+  @media ${({ theme }) => theme.device.xs} {
+    display: block;
+    color: ${({ theme }) => theme.colors.text.title};
+    font-size: 18px;
+    align-self: center;
+    justify-self: center;
+    ul {
+      list-style-type: none;
+    }
+  }
+  @media ${({ theme }) => theme.device.lg} {
+    display: none;
+  }
+`
+
 const WebsiteMapWrapper = styled.div`
+  @media ${({ theme }) => theme.device.xs} {
+    ul {
+      display: flex;
+      .offer {
+        display: none;
+      }
+      li {
+        padding: 8px;
+      }
+    }
+  }
+  align-self: center;
+  justify-self: center;
   ul {
     list-style-type: none;
     li {
@@ -68,13 +158,19 @@ const WebsiteMapWrapper = styled.div`
 `
 
 const PrivacyPolicy = styled.div`
+  @media ${({ theme }) => theme.device.xs} {
+    grid-column-start: 1;
+    grid-column-end: span 2;
+    text-align: right;
+    align-self: center;
+  }
   font-size: 12px;
 `
 
-const DefaultFooter = () => {
+const Footer = () => {
   return (
     <FooterWrapper>
-      <LogoSVG style={{ width: "250px", height: "100px" }} />
+      <Logo />
       <AdressWrapper>
         <h3>WTB Telecom Sp. z o.o. Sp. k</h3>
         <h4>Adres korespondencyjny:</h4>
@@ -89,19 +185,27 @@ const DefaultFooter = () => {
           <li>KRS: 0000706536</li>
         </ul>
       </CompanyDataWrapper>
-      <ContactWrapper>
+      <FullContactWrapper>
         <ul>
-          <li>Skontaktuj sie z nami</li>
+          <li>Skontaktuj się z nami</li>
           <li className="header">Tel:</li>
           <li>792 719 623</li>
           <li className="header">E-mail:</li>
           <li>biuro@wwtb.pl</li>
         </ul>
-      </ContactWrapper>
+      </FullContactWrapper>
+      <ShortContactWrapper>
+        <ul>
+          <li>+48 792 719 623</li>
+          <li>biuro@wwtb.pl</li>
+        </ul>
+      </ShortContactWrapper>
       <WebsiteMapWrapper>
         <ul>
           <li>
-            <Link to="/offer">Sprawdz oferte</Link>
+            <Link class="offer" to="/offer">
+              Sprawdź oferte
+            </Link>
           </li>
           <li>
             <Link to="/">Strona główna</Link>
@@ -124,4 +228,4 @@ const DefaultFooter = () => {
   )
 }
 
-export default DefaultFooter
+export default Footer
