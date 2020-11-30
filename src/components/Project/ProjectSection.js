@@ -28,9 +28,15 @@ const ProjectWrapper = styled.section`
     align-self: center;
     max-width: 60%;
     margin: 80px 40px;
-    color: ${props => (props.color === "gold" ? "white" : "black")};
+    color: ${props =>
+      props.color === "gold"
+        ? "white"
+        : ({ theme }) => theme.colors.text.primary};
     h2 {
-      color: ${props => (props.color === "gold" ? "white" : "black")};
+      color: ${props =>
+        props.color === "gold"
+          ? "white"
+          : ({ theme }) => theme.colors.text.primary};
       font-weight: bold;
     }
     p {

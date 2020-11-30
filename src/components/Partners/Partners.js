@@ -13,7 +13,7 @@ const PartnersSection = styled.section`
 const ImageWrapper = styled.ul`
   max-width: 1200px;
   white-space: nowrap;
-  overflow-x: scroll;
+  overflow-x: hidden;
   overflow-y: hidden;
   margin-left: auto;
   margin-right: auto;

@@ -78,7 +78,7 @@ const Title = styled.div`
   margin-top: 8px;
   margin-left: 8px;
   position: absolute;
-  z-index: 2;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   h3 {
@@ -188,7 +188,7 @@ const Services = () => {
   ]
   return (
     <ServicesWrapper>
-      <h1>Sektory uslug</h1>
+      <h1>Sektory usług</h1>
       <ServicesCategoriesWrapper className="services">
         <ImgWrapper>
           <Overlay className="overlay"></Overlay>

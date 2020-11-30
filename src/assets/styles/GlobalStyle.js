@@ -13,13 +13,14 @@ const GlobalStyle = createGlobalStyle`
   body {
 
     margin: 0;
-    font-family: 'Montserrat' sans-serif;
-    height: 100%
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    color: ${({ theme }) => theme.colors.text.primary}
   }
   button {
     padding: 0;
     cursor: pointer;
-    font-family: 'Montserrat' sans-serif;
+    font-family: 'Montserrat', sans-serif;
   }
   p {
     font-size: 16px;

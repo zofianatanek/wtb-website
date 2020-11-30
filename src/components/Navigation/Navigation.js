@@ -129,7 +129,9 @@ const Navigation = () => {
   const [nav, showNav] = useState(false)
   return (
     <NavigationWrapper>
-      <LogoSVG width="232px" maxHeight="72px" />
+      <Link to="/">
+        <LogoSVG width="232px" maxHeight="72px" />
+      </Link>
       <NavigationList>
         <NavigationListItem>
           <Link to="/">Strona główna</Link>
