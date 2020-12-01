@@ -10,20 +10,28 @@ const PartnersSection = styled.section`
     text-align: left;
   }
 `
-const ImageWrapper = styled.ul`
-  max-width: 1200px;
+const ListWrapper = styled.div`
+  max-width: 90%;
   white-space: nowrap;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  overflow: hidden;
   margin-left: auto;
   margin-right: auto;
+`
+const ImageList = styled.ul`
+  animation: move 60s linear infinite;
   display: flex;
-  ::-webkit-scrollbar {
-  }
   li {
     display: flex;
-    margin: 0 40px;
+    margin: 0 60px;
     align-items: center;
+  }
+  @keyframes move {
+    0% {
+      transform: translate(100%, 0);
+    }
+    100% {
+      transform: translate(-200%, 0);
+    }
   }
 `
 
@@ -100,40 +108,42 @@ const Partners = () => {
   return (
     <PartnersSection>
       <h1>Partnerzy</h1>
-      <ImageWrapper>
-        <li>
-          {" "}
-          <Img fixed={data.orange.childImageSharp.fixed} />
-        </li>
-        <li>
-          <Img fixed={data.tauron.childImageSharp.fixed} />
-        </li>
-        <li>
-          <Img fixed={data.netia.childImageSharp.fixed} />
-        </li>
-        <li>
-          <Img fixed={data.teltech.childImageSharp.fixed} />
-        </li>
-        <li>
-          {" "}
-          <Img fixed={data.ecs.childImageSharp.fixed} />
-        </li>
-        <li>
-          {" "}
-          <Img fixed={data.mx3.childImageSharp.fixed} />
-        </li>
-        <li>
-          <Img fixed={data.nexotech.childImageSharp.fixed} />
-        </li>
-        <li>
-          {" "}
-          <Img fixed={data.syscom.childImageSharp.fixed} />
-        </li>
-        <li>
-          {" "}
-          <Img fixed={data.maxinvest.childImageSharp.fixed} />
-        </li>
-      </ImageWrapper>
+      <ListWrapper>
+        <ImageList>
+          <li>
+            {" "}
+            <Img fixed={data.orange.childImageSharp.fixed} />
+          </li>
+          <li>
+            <Img fixed={data.tauron.childImageSharp.fixed} />
+          </li>
+          <li>
+            <Img fixed={data.netia.childImageSharp.fixed} />
+          </li>
+          <li>
+            <Img fixed={data.teltech.childImageSharp.fixed} />
+          </li>
+          <li>
+            {" "}
+            <Img fixed={data.ecs.childImageSharp.fixed} />
+          </li>
+          <li>
+            {" "}
+            <Img fixed={data.mx3.childImageSharp.fixed} />
+          </li>
+          <li>
+            <Img fixed={data.nexotech.childImageSharp.fixed} />
+          </li>
+          <li>
+            {" "}
+            <Img fixed={data.syscom.childImageSharp.fixed} />
+          </li>
+          <li>
+            {" "}
+            <Img fixed={data.maxinvest.childImageSharp.fixed} />
+          </li>
+        </ImageList>
+      </ListWrapper>
     </PartnersSection>
   )
 }
