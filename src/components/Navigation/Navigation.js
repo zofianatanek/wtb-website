@@ -4,7 +4,7 @@ import { Link } from "gatsby"
 import LogoSVG from "../SVGs/LogoSVG"
 
 const MenuIcon = styled.button`
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${({ theme }) => theme.device.xxs} {
     position: fixed;
     top: 2rem;
     right: 2rem;
@@ -46,7 +46,7 @@ const MenuIcon = styled.button`
 const NavigationWrapper = styled.nav`
   position: sticky;
   background-color: ${({ theme }) => theme.colors.background.primary};
-  width: 100%;
+  /* width: 100vh; */
   z-index: 2;
   a {
     text-decoration: none;
@@ -57,7 +57,7 @@ const NavigationWrapper = styled.nav`
     }
   }
 
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${({ theme }) => theme.device.xxs} {
     top: 0px;
     position: sticky;
     z-index: 2;
@@ -78,7 +78,7 @@ const NavigationWrapper = styled.nav`
   }
 `
 const NavigationOverlay = styled.div`
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${({ theme }) => theme.device.xxs} {
     position: absolute;
     top: 0;
     transform: ${({ nav }) => (nav ? "translateY(0)" : "translateY(-100%)")};
@@ -97,7 +97,7 @@ const NavigationOverlay = styled.div`
 const NavigationList = styled.ul`
   list-style: none;
 
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${({ theme }) => theme.device.xxs} {
     display: none;
   }
   @media ${({ theme }) => theme.device.md} {
@@ -113,7 +113,7 @@ const NavigationListItem = styled.li`
   margin-left: 32px;
 `
 const OverlayNavigationList = styled.ul`
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${({ theme }) => theme.device.xxs} {
     list-style: none;
     display: flex;
     flex-direction: column;

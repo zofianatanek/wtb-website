@@ -23,7 +23,6 @@ const AboutWrapper = styled.section`
   }
 `
 const AboutText = styled.section`
-  margin-top: 40px;
   text-align: justify;
   @media ${({ theme }) => theme.device.xs} {
     width: 100%;

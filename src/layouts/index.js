@@ -1,14 +1,46 @@
 import React from "react"
-import styled, { ThemeProvider } from "styled-components"
+import { ThemeProvider, createGlobalStyle } from "styled-components"
 import Navigation from "../components/Navigation/Navigation"
-import GlobalStyle from "../assets/styles/GlobalStyle"
 import Footer from "../components/Footer/Footer"
 import { theme } from "../utils/theme"
 
-// const StyledContent = styled(Content)`
-//   background-color: ${({ theme }) => theme.colors.background.primary};
-//   margin-top: 72px;
-// `
+const GlobalStyle = createGlobalStyle`
+    html {
+    box-sizing: border-box;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+  body {
+
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    height: 100%;
+    color: ${({ theme }) => theme.colors.text.primary}
+  }
+  button {
+    padding: 0;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+  }
+  p {
+    font-size: 16px;
+  }
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+  h1 {
+    font-weight: bold;
+    font-size: 21px;
+    color: ${({ theme }) => theme.colors.text.title};
+  }
+  a {
+    text-decoration: none;
+  }
+`
 
 const MainLayout = ({ children }) => (
   <ThemeProvider theme={theme}>

@@ -154,36 +154,33 @@ const Services = () => {
   const data = useStaticQuery(query)
   const theme = useContext(ThemeContext)
   const imageTelecom = [
-    data.image1Small.childImageSharp.fixed,
-    {
-      ...data.image1Big.childImageSharp.fixed,
-      media: `(min-width: ${theme.breakpoints.sm}) and (max-width: ${theme.breakpoints.xl})`,
-    },
     {
       ...data.image1Small.childImageSharp.fixed,
       media: `${theme.device.xl}`,
     },
+    {
+      ...data.image1Big.childImageSharp.fixed,
+      media: `(min-width: ${theme.breakpoints.md}) and (max-width: ${theme.breakpoints.xl})`,
+    },
   ]
   const imageRadio = [
-    data.image2Small.childImageSharp.fixed,
-    {
-      ...data.image2Big.childImageSharp.fixed,
-      media: `(min-width: ${theme.breakpoints.sm}) and (max-width: ${theme.breakpoints.xl})`,
-    },
     {
       ...data.image2Small.childImageSharp.fixed,
       media: `${theme.device.xl}`,
     },
+    {
+      ...data.image2Big.childImageSharp.fixed,
+      media: `(min-width: ${theme.breakpoints.md}) and (max-width: ${theme.breakpoints.xl})`,
+    },
   ]
   const imageCivilEngineering = [
-    data.image3Small.childImageSharp.fixed,
-    {
-      ...data.image3Big.childImageSharp.fixed,
-      media: `(min-width: ${theme.breakpoints.sm}) and (max-width: ${theme.breakpoints.xl})`,
-    },
     {
       ...data.image3Small.childImageSharp.fixed,
       media: `${theme.device.xl}`,
+    },
+    {
+      ...data.image3Big.childImageSharp.fixed,
+      media: `(min-width: ${theme.breakpoints.md}) and (max-width: ${theme.breakpoints.xl})`,
     },
   ]
   return (

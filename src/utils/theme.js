@@ -19,6 +19,7 @@ const fonts = {
 
 const breakpoints = {
   default: "0px",
+  xxs: "320px",
   xs: "480px",
   sm: "576px",
   md: "768px",
@@ -28,6 +29,7 @@ const breakpoints = {
 }
 
 const device = {
+  xxs: `(min-width: ${breakpoints.xxs})`,
   xs: `(min-width: ${breakpoints.xs})`,
   sm: `(min-width: ${breakpoints.sm})`,
   md: `(min-width: ${breakpoints.md})`,

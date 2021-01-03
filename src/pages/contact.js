@@ -1,6 +1,6 @@
-import React from "react"
+import React, { useEffect } from "react"
 import styled from "styled-components"
-import GoogleMap from "../components/GoogleMap/GoogleMap"
+import ContactMap from "../components/ContactMap/ContactMap"
 
 const Contact = styled.section`
   display: flex;
@@ -28,29 +28,29 @@ const ContactInfo = styled.article`
   }
 `
 
-const ContactPage = () => (
-  <Contact>
-    <h1>Kontakt</h1>
-    <ContactSection>
-      <ContactInfo>
-        <p>
+const ContactPage = () => {
+  return (
+    <Contact>
+      <h1>Kontakt</h1>
+      <ContactSection>
+        <ContactInfo>
           <h2>WTB Telecom Sp. z o.o. Sp. k.</h2>
           <h3>Pl. Orląt Lwowskich 20e 53-605 Wrocław </h3>
-        </p>
-        <ul>
-          <li>Tel.: 792 719 623</li>
-          <li>E-mail: biuro@wwtb.pl</li>
-          <li>Linkedin</li>
-        </ul>
-        <h4>
-          NIP: 368856753 REGON: 368856753 Spółka zarejestrowana w Sądzie
-          Rejonowym DLA WROCŁAWIA FABRYCZNEJ WE WROCŁAWIU, VI WYDZIAŁ
-          GOSPODARCZY KRAJOWEGO REJESTRU SĄDOWEGO pod numerem 0000706536
-        </h4>
-      </ContactInfo>
-      <GoogleMap></GoogleMap>
-    </ContactSection>
-  </Contact>
-)
+          <ul>
+            <li>Tel.: 792 719 623</li>
+            <li>E-mail: biuro@wwtb.pl</li>
+            <li>Linkedin</li>
+          </ul>
+          <h4>
+            NIP: 368856753 REGON: 368856753 Spółka zarejestrowana w Sądzie
+            Rejonowym DLA WROCŁAWIA FABRYCZNEJ WE WROCŁAWIU, VI WYDZIAŁ
+            GOSPODARCZY KRAJOWEGO REJESTRU SĄDOWEGO pod numerem 0000706536
+          </h4>
+        </ContactInfo>
+        <ContactMap />
+      </ContactSection>
+    </Contact>
+  )
+}
 
 export default ContactPage

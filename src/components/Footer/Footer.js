@@ -6,7 +6,7 @@ import LogoSVG from "../SVGs/LogoSVG"
 const FooterWrapper = styled.div`
   color: ${({ theme }) => theme.colors.text.primary};
   /* max-height: 200px; */
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${({ theme }) => theme.device.xxs} {
     width: 100%;
     height: 100%;
     background-color: ${({ theme }) => theme.colors.background.dark};
@@ -29,7 +29,7 @@ const FooterWrapper = styled.div`
   }
 `
 const Logo = styled(LogoSVG)`
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${({ theme }) => theme.device.xxs} {
     width: 180px;
   }
   @media ${({ theme }) => theme.device.sm} {
@@ -51,10 +51,13 @@ const AdressWrapper = styled.div`
   h3 {
     font-weight: ${({ theme }) => theme.fonts.bold};
   }
+  h2 {
+    margin: 0;
+  }
   p {
     margin: 0;
   }
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${({ theme }) => theme.device.xxs} {
     justify-self: flex-start;
     h2 {
       font-size: 14px;
@@ -106,7 +109,7 @@ const FullContactWrapper = styled.div`
       }
     }
   }
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${({ theme }) => theme.device.xxs} {
     display: none;
   }
   @media ${({ theme }) => theme.device.lg} {
@@ -142,7 +145,7 @@ const FullContactWrapper = styled.div`
   }
 `
 const ShortContactWrapper = styled.div`
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${({ theme }) => theme.device.xxs} {
     display: block;
     color: ${({ theme }) => theme.colors.text.title};
     font-size: 18px;
@@ -174,7 +177,7 @@ const WebsiteMapWrapper = styled.div`
       }
     }
   }
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${({ theme }) => theme.device.xxs} {
     align-self: center;
     justify-self: flex-start;
     .offer {
@@ -225,7 +228,7 @@ const WebsiteMapWrapper = styled.div`
 `
 
 const PrivacyPolicy = styled.div`
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${({ theme }) => theme.device.xxs} {
     grid-column-start: 1;
     grid-column-end: span 2;
     text-align: right;
