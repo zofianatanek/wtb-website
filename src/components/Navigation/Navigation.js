@@ -130,7 +130,7 @@ const Navigation = () => {
   return (
     <NavigationWrapper>
       <Link to="/">
-        <LogoSVG width="300px" />
+        <LogoSVG width="250px" />
       </Link>
       <NavigationList>
         <NavigationListItem>
