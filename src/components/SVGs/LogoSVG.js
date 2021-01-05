@@ -2,7 +2,7 @@ import * as React from "react"
 
 function LogoSVG(props) {
   return (
-    <svg width={853} height={185} viewBox="0 0 853 185" {...props}>
+    <svg width={800} height={185} viewBox="0 0 1000 185" {...props}>
       <defs>
         <clipPath id="a">
           <path d="M0 0H853V185H0z" />
@@ -260,31 +260,31 @@ function LogoSVG(props) {
         <text
           transform="translate(437 -9)"
           fill="#707070"
-          fontSize={180}
-          fontFamily="TechnicLite"
+          fontSize={170}
+          fontFamily="Quicksand"
         >
-          <tspan x={0} y={162}>
+          <tspan x={0} y={158}>
             {"W"}
           </tspan>
         </text>
         <text
-          transform="translate(615 -47)"
+          transform="translate(623 -47)"
           fill="#707070"
-          fontSize={220}
-          fontFamily="TechnicLite"
+          fontSize={170}
+          fontFamily="Quicksand"
         >
           <tspan x={0} y={198}>
-            {"t"}
+            {"T"}
           </tspan>
         </text>
         <text
-          transform="translate(757 -47)"
+          transform="translate(750 -47)"
           fill="#707070"
-          fontSize={220}
-          fontFamily="TechnicLite"
+          fontSize={170}
+          fontFamily="Quicksand"
         >
           <tspan x={0} y={198}>
-            {"b"}
+            {"B"}
           </tspan>
         </text>
       </g>

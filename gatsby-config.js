@@ -38,8 +38,13 @@ module.exports = {
               variants: ["300", "400", "500"],
               //subsets: ['latin']
             },
+            {
+              family: "Quicksand",
+              variants: ["300"],
+            },
           ],
         },
+        family: "TechnicLite",
       },
     },
     {
