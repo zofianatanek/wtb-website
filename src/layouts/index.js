@@ -33,12 +33,19 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
   h1 {
-    font-weight: bold;
-    font-size: 21px;
+    font-weight: ${({ theme }) => theme.fonts.bold};
     color: ${({ theme }) => theme.colors.text.title};
+    font-size: 24px;
+  }
+  h2 {
+    font-size: 21px;
+  }
+  h3 {
+    font-size: 18px;
   }
   a {
     text-decoration: none;
+    color: inherit;
   }
 `
 

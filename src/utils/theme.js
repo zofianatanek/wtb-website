@@ -13,13 +13,13 @@ const colors = {
 
 const fonts = {
   thin: 300,
-  regular: 400,
+  regular: 500,
   bold: 600,
 }
 
 const breakpoints = {
   default: "0px",
-  xxs: "320px",
+  xxs: "300px",
   xs: "480px",
   sm: "576px",
   md: "768px",

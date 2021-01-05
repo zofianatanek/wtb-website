@@ -1,5 +1,6 @@
-import React, { useEffect } from "react"
+import React from "react"
 import styled from "styled-components"
+import { LinkedinOutlined } from "@ant-design/icons"
 import ContactMap from "../components/ContactMap/ContactMap"
 
 const Contact = styled.section`
@@ -7,8 +8,12 @@ const Contact = styled.section`
   flex-direction: column;
   height: calc(100vh - 252px);
   justify-content: center;
+  font-weight: ${({ theme }) => theme.fonts.regular};
   h1 {
     padding: 0 40px;
+  }
+  h3 {
+    font-weight: ${({ theme }) => theme.fonts.regular};
   }
 `
 const ContactSection = styled.section`
@@ -35,17 +40,28 @@ const ContactPage = () => {
       <ContactSection>
         <ContactInfo>
           <h2>WTB Telecom Sp. z o.o. Sp. k.</h2>
-          <h3>Pl. Orląt Lwowskich 20e 53-605 Wrocław </h3>
+          <h3>
+            Pl. Orląt Lwowskich 20e <br></br> 53-605 Wrocław{" "}
+          </h3>
           <ul>
             <li>Tel.: 792 719 623</li>
             <li>E-mail: biuro@wwtb.pl</li>
-            <li>Linkedin</li>
+            <li>
+              <a
+                href="https://www.linkedin.com/company/worldwide-telecom-business/about/"
+                target="blank"
+              >
+                {" "}
+                <LinkedinOutlined /> Linkedin
+              </a>
+            </li>
           </ul>
-          <h4>
-            NIP: 368856753 REGON: 368856753 Spółka zarejestrowana w Sądzie
-            Rejonowym DLA WROCŁAWIA FABRYCZNEJ WE WROCŁAWIU, VI WYDZIAŁ
-            GOSPODARCZY KRAJOWEGO REJESTRU SĄDOWEGO pod numerem 0000706536
-          </h4>
+          <p>
+            NIP: 368856753 REGON: 368856753 <br></br>Spółka zarejestrowana w
+            Sądzie Rejonowym dla Wrocławia Fabrycznej we Wrocławiu <br></br>VI
+            Wydział Gospodarczy Krajowego Rejestry Sądowego pod numerem
+            0000706536
+          </p>
         </ContactInfo>
         <ContactMap />
       </ContactSection>

@@ -111,7 +111,7 @@ const ImgWrapper = styled.div`
       margin: 0;
       width: 380px;
       height: 204px;
-      @media ${({ theme }) => theme.device.sm} {
+      @media ${({ theme }) => theme.device.md} {
         height: 326px;
         width: 580px;
       }
@@ -130,7 +130,7 @@ const ImgWrapper = styled.div`
     .overlay {
       height: 204px;
       width: 380px;
-      @media ${({ theme }) => theme.device.sm} {
+      @media ${({ theme }) => theme.device.md} {
         height: 326px;
         width: 580px;
       }
