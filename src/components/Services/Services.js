@@ -6,7 +6,31 @@ import { RightOutlined } from "@ant-design/icons"
 
 const query = graphql`
   {
-    image1Small: file(name: { eq: "telecom" }) {
+    telecomS: file(name: { eq: "telecom" }) {
+      childImageSharp {
+        fixed(width: 300, height: 169, quality: 100, grayscale: true) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    radioS: file(name: { eq: "radio" }) {
+      childImageSharp {
+        fixed(width: 300, height: 169, quality: 100, grayscale: true) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    signsS: file(name: { eq: "signs" }) {
+      childImageSharp {
+        fixed(width: 300, height: 169, quality: 100, grayscale: true) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+
+    telecomM: file(name: { eq: "telecom" }) {
       childImageSharp {
         fixed(width: 380, height: 204, quality: 100, grayscale: true) {
           ...GatsbyImageSharpFixed
@@ -14,7 +38,7 @@ const query = graphql`
       }
     }
 
-    image2Small: file(name: { eq: "radio" }) {
+    radioM: file(name: { eq: "radio" }) {
       childImageSharp {
         fixed(width: 380, height: 204, quality: 100, grayscale: true) {
           ...GatsbyImageSharpFixed
@@ -22,7 +46,7 @@ const query = graphql`
       }
     }
 
-    image3Small: file(name: { eq: "signs" }) {
+    signsM: file(name: { eq: "signs" }) {
       childImageSharp {
         fixed(width: 380, height: 204, quality: 100, grayscale: true) {
           ...GatsbyImageSharpFixed
@@ -30,7 +54,7 @@ const query = graphql`
       }
     }
 
-    image1Big: file(name: { eq: "telecom" }) {
+    telecomL: file(name: { eq: "telecom" }) {
       childImageSharp {
         fixed(width: 580, quality: 100, grayscale: true) {
           ...GatsbyImageSharpFixed
@@ -38,7 +62,7 @@ const query = graphql`
       }
     }
 
-    image2Big: file(name: { eq: "radio" }) {
+    radioL: file(name: { eq: "radio" }) {
       childImageSharp {
         fixed(width: 580, height: 326, quality: 100, grayscale: true) {
           ...GatsbyImageSharpFixed
@@ -46,7 +70,7 @@ const query = graphql`
       }
     }
 
-    image3Big: file(name: { eq: "signs" }) {
+    signsL: file(name: { eq: "signs" }) {
       childImageSharp {
         fixed(width: 580, quality: 100, grayscale: true) {
           ...GatsbyImageSharpFixed
@@ -57,11 +81,13 @@ const query = graphql`
 `
 
 const ServicesWrapper = styled.section`
-  padding: 40px;
+  @media ${({ theme }) => theme.device.xs} {
+    padding: 40px;
+  }
 `
 const ServicesCategoriesWrapper = styled.section`
   margin: 40px 0;
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${({ theme }) => theme.device.xxs} {
     display: grid;
     grid-template-rows: repeat(3, 1fr);
     grid-gap: 32px;
@@ -102,8 +128,7 @@ const Overlay = styled.div`
   transition: 0.5s ease-in-out;
 `
 const ImgWrapper = styled.div`
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
 
   &:hover {
     .title {
@@ -155,32 +180,56 @@ const Services = () => {
   const theme = useContext(ThemeContext)
   const imageTelecom = [
     {
-      ...data.image1Small.childImageSharp.fixed,
-      media: `${theme.device.xl}`,
+      ...data.telecomS.childImageSharp.fixed,
+      media: `(max-width: ${theme.breakpoints.xxs})`,
     },
     {
-      ...data.image1Big.childImageSharp.fixed,
+      ...data.telecomM.childImageSharp.fixed,
+      media: `(min-width: ${theme.breakpoints.xs}) and (max-width: ${theme.breakpoints.md})`,
+    },
+    {
+      ...data.telecomL.childImageSharp.fixed,
       media: `(min-width: ${theme.breakpoints.md}) and (max-width: ${theme.breakpoints.xl})`,
+    },
+    {
+      ...data.telecomM.childImageSharp.fixed,
+      media: `${theme.device.xl}`,
     },
   ]
   const imageRadio = [
     {
-      ...data.image2Small.childImageSharp.fixed,
-      media: `${theme.device.xl}`,
+      ...data.radioS.childImageSharp.fixed,
+      media: `(max-width: ${theme.breakpoints.xxs})`,
     },
     {
-      ...data.image2Big.childImageSharp.fixed,
+      ...data.radioM.childImageSharp.fixed,
+      media: `(min-width: ${theme.breakpoints.xs}) and (max-width: ${theme.breakpoints.md})`,
+    },
+    {
+      ...data.radioL.childImageSharp.fixed,
       media: `(min-width: ${theme.breakpoints.md}) and (max-width: ${theme.breakpoints.xl})`,
+    },
+    {
+      ...data.radioM.childImageSharp.fixed,
+      media: `${theme.device.xl}`,
     },
   ]
   const imageCivilEngineering = [
     {
-      ...data.image3Small.childImageSharp.fixed,
-      media: `${theme.device.xl}`,
+      ...data.signsS.childImageSharp.fixed,
+      media: `(max-width: ${theme.breakpoints.xxs})`,
     },
     {
-      ...data.image3Big.childImageSharp.fixed,
+      ...data.signsM.childImageSharp.fixed,
+      media: `(min-width: ${theme.breakpoints.xs}) and (max-width: ${theme.breakpoints.md})`,
+    },
+    {
+      ...data.signsL.childImageSharp.fixed,
       media: `(min-width: ${theme.breakpoints.md}) and (max-width: ${theme.breakpoints.xl})`,
+    },
+    {
+      ...data.signsM.childImageSharp.fixed,
+      media: `${theme.device.xl}`,
     },
   ]
   return (

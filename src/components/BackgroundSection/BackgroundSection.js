@@ -25,14 +25,9 @@ const query = graphql`
 
 const BrandWrapper = styled.section`
   margin-bottom: 60px;
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${({ theme }) => theme.device.xxs} {
     display: flex;
     align-items: center;
-    .LogoIcon {
-      width: 150px;
-      height: 80px;
-      margin-right: 10px;
-    }
   }
   @media ${({ theme }) => theme.device.md} {
     display: flex;
@@ -40,15 +35,23 @@ const BrandWrapper = styled.section`
     margin-top: 0;
     margin-bottom: 0;
     padding: 20vh;
-    .LogoIcon {
-      width: 240px;
-      height: auto;
-    }
+  }
+`
+
+const Logo = styled(LogoIconSVG)`
+  @media ${({ theme }) => theme.device.xxs} {
+    width: 150px;
+    height: auto;
+    margin-right: 10px;
+  }
+  @media ${({ theme }) => theme.device.md} {
+    width: 240px;
+    height: auto;
   }
 `
 
 const Brand = styled.div`
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${({ theme }) => theme.device.xxs} {
     margin-left: 10px;
     h3 {
       font-size: 16px;
@@ -76,7 +79,7 @@ const Brand = styled.div`
 `
 const StyledBackgroundImage = styled(BackgroundImage)`
   height: 60vh;
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${({ theme }) => theme.device.xxs} {
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -105,7 +108,7 @@ const BackgroundSection = () => {
   return (
     <StyledBackgroundImage fluid={sources}>
       <BrandWrapper>
-        <LogoIconSVG className="LogoIcon" />
+        <Logo />
         <Brand>
           <h3>Biuro Projektów</h3>
           <h1>WTB Telecom</h1>

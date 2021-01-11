@@ -6,7 +6,6 @@ import ContactMap from "../components/ContactMap/ContactMap"
 const Contact = styled.section`
   display: flex;
   flex-direction: column;
-  height: calc(100vh - 252px);
   justify-content: center;
   font-weight: ${({ theme }) => theme.fonts.regular};
   h1 {
@@ -15,14 +14,21 @@ const Contact = styled.section`
   h3 {
     font-weight: ${({ theme }) => theme.fonts.regular};
   }
+  @media ${({ theme }) => theme.device.sm} {
+    min-height: calc(100vh - 252px);
+  }
 `
 const ContactSection = styled.section`
   background-color: ${({ theme }) => theme.colors.background.dark};
   display: flex;
+  @media ${({ theme }) => theme.device.xs} {
+    flex-direction: column;
+  }
+  @media ${({ theme }) => theme.device.sm} {
+    flex-direction: row;
+  }
 `
 const ContactInfo = styled.article`
-  padding: 5% 10%;
-  width: 60%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -30,6 +36,21 @@ const ContactInfo = styled.article`
     list-style: none;
     font-size: 16px;
     color: ${({ theme }) => theme.colors.text.title};
+  }
+  @media ${({ theme }) => theme.device.xxs} {
+    margin: 0 25px;
+  }
+  @media ${({ theme }) => theme.device.sm} {
+    padding: 5% 10%;
+    width: 60%;
+  }
+`
+const MapWrapper = styled.article`
+  @media ${({ theme }) => theme.device.xs} {
+    display: flex;
+    justify-content: center;
+    z-index: 0;
+    max-width: 500px;
   }
 `
 
@@ -63,7 +84,9 @@ const ContactPage = () => {
             0000706536
           </p>
         </ContactInfo>
-        <ContactMap />
+        <MapWrapper>
+          <ContactMap />
+        </MapWrapper>
       </ContactSection>
     </Contact>
   )

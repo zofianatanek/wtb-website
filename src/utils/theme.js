@@ -19,7 +19,7 @@ const fonts = {
 
 const breakpoints = {
   default: "0px",
-  xxs: "300px",
+  xxs: "100px",
   xs: "480px",
   sm: "576px",
   md: "768px",

@@ -5,11 +5,17 @@ import LogoSVG from "../SVGs/LogoSVG"
 
 const FooterWrapper = styled.div`
   color: ${({ theme }) => theme.colors.text.primary};
-  /* max-height: 200px; */
+  background-color: ${({ theme }) => theme.colors.background.dark};
   @media ${({ theme }) => theme.device.xxs} {
     width: 100%;
     height: 100%;
-    background-color: ${({ theme }) => theme.colors.background.dark};
+    display: flex;
+    flex-direction: column;
+    padding: 10px 20px;
+  }
+  @media ${({ theme }) => theme.device.xs} {
+    width: 100%;
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 0.75fr 0.25fr;
@@ -18,9 +24,8 @@ const FooterWrapper = styled.div`
   }
   @media ${({ theme }) => theme.device.lg} {
     display: flex;
-    background-color: ${({ theme }) => theme.colors.background.dark};
+    flex-direction: row;
     justify-content: space-evenly;
-    /* align-items: center; */
     width: 100%;
     padding: 32px 16px;
   }
@@ -29,11 +34,17 @@ const FooterWrapper = styled.div`
   }
 `
 const Logo = styled(LogoSVG)`
+  height: auto;
+
   @media ${({ theme }) => theme.device.xxs} {
     width: 180px;
+    margin: 10px 0;
+    align-self: center;
   }
-  @media ${({ theme }) => theme.device.sm} {
+  @media ${({ theme }) => theme.device.xs} {
     width: 200px;
+    align-self: center;
+    justify-self: center;
   }
   @media ${({ theme }) => theme.device.lg} {
     width: 200px;
@@ -41,9 +52,6 @@ const Logo = styled(LogoSVG)`
   @media ${({ theme }) => theme.device.xl} {
     width: 250px;
   }
-  height: auto;
-  align-self: center;
-  justify-self: center;
 `
 
 const AdressWrapper = styled.div`
@@ -58,7 +66,7 @@ const AdressWrapper = styled.div`
     margin: 0;
   }
   @media ${({ theme }) => theme.device.xxs} {
-    justify-self: flex-start;
+    margin: 10px 0;
     h2 {
       font-size: 14px;
     }
@@ -145,15 +153,19 @@ const FullContactWrapper = styled.div`
   }
 `
 const ShortContactWrapper = styled.div`
+  ul {
+    list-style-type: none;
+  }
+  color: ${({ theme }) => theme.colors.text.title};
   @media ${({ theme }) => theme.device.xxs} {
     display: block;
-    color: ${({ theme }) => theme.colors.text.title};
-    font-size: 18px;
+    font-size: 12px;
+    margin: 10px 0;
+  }
+  @media ${({ theme }) => theme.device.xs} {
     align-self: center;
     justify-self: center;
-    ul {
-      list-style-type: none;
-    }
+    font-size: 18px;
   }
   @media ${({ theme }) => theme.device.lg} {
     display: none;
@@ -178,11 +190,13 @@ const WebsiteMapWrapper = styled.div`
     }
   }
   @media ${({ theme }) => theme.device.xxs} {
+    margin: 10px 0;
     align-self: center;
     justify-self: flex-start;
     .offer {
       font-size: 12px;
       font-weight: normal;
+      line-height: 40px;
     }
     .navigation {
       display: grid;
@@ -229,11 +243,15 @@ const WebsiteMapWrapper = styled.div`
 
 const PrivacyPolicy = styled.div`
   @media ${({ theme }) => theme.device.xxs} {
+    margin: 10px 0;
     grid-column-start: 1;
     grid-column-end: span 2;
+    font-size: 8px;
+    align-self: center;
+  }
+  @media ${({ theme }) => theme.device.xs} {
     text-align: right;
     align-self: center;
-    font-size: 8px;
   }
   @media ${({ theme }) => theme.device.lg} {
     span {
