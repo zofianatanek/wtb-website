@@ -16,13 +16,20 @@ const query = graphql`
 `
 
 const ProjectWrapper = styled.section`
+  @media ${({ theme }) => theme.device.xxs} {
+    flex-direction: column;
+    align-items: center;
+  }
+  @media ${({ theme }) => theme.device.md} {
+    flex-direction: ${props => (props.reverse ? "row-reverse" : "row")};
+  }
+  display: flex;
   width: 100vw;
   background-color: ${props =>
     props.color === "gold"
       ? ({ theme }) => theme.colors.background.gold
       : ({ theme }) => theme.colors.background.dark};
-  display: flex;
-  flex-direction: ${props => (props.reverse ? "row-reverse" : "row")};
+
   justify-content: space-between;
   .description {
     align-self: center;

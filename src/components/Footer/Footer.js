@@ -277,13 +277,12 @@ const Footer = () => {
           Pl. Orląt Lwowskich 20e <br></br>53-605 Wrocław{" "}
         </p>
       </AdressWrapper>
-      {/* <CompanyDataWrapper>
+      <ShortContactWrapper>
         <ul>
-          <li>NIP: 368856753</li>
-          <li>REGON: 8943119983</li>
-          <li>KRS: 0000706536</li>
+          <li>+48 792 719 623</li>
+          <li>biuro@wwtb.pl</li>
         </ul>
-      </CompanyDataWrapper> */}
+      </ShortContactWrapper>
       <FullContactWrapper>
         <ul>
           <li>Skontaktuj się z nami</li>
@@ -291,12 +290,6 @@ const Footer = () => {
           <li className="contact">E-mail: biuro@wwtb.pl</li>
         </ul>
       </FullContactWrapper>
-      <ShortContactWrapper>
-        <ul>
-          <li>+48 792 719 623</li>
-          <li>biuro@wwtb.pl</li>
-        </ul>
-      </ShortContactWrapper>
       <WebsiteMapWrapper>
         <ul>
           <li>

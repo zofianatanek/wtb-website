@@ -153,9 +153,6 @@ const Navigation = () => {
             <Link to="/">Strona główna</Link>
           </NavigationListItem>
           <NavigationListItem>
-            <Link to="/about">O nas</Link>
-          </NavigationListItem>
-          <NavigationListItem>
             <Link to="/projects">Projekty</Link>
           </NavigationListItem>
           <NavigationListItem>

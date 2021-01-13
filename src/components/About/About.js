@@ -39,24 +39,31 @@ const About = () => (
       <AboutWrapper>
         <AboutText>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Sed enim
-            ut sem viverra. Ut tortor pretium viverra suspendisse potenti
-            nullam. A scelerisque purus semper eget duis. Fermentum dui faucibus
-            in ornare. Massa placerat duis ultricies lacus sed turpis tincidunt.
-            Pretium quam vulputate dignissim suspendisse in est ante. Egestas
-            egestas fringilla phasellus faucibus scelerisque eleifend.
+            WTB Telecom Sp. z o.o. powstała w odpowiedzi na coraz większe
+            zapotrzebowanie rynku na wysokiej klasy usługi inżynieryjne.
           </p>
           <p>
-            Ullamcorper sit amet risus nullam eget felis eget nunc lobortis.
-            Semper quis lectus nulla at volutpat diam ut. Molestie nunc non
-            blandit massa. Faucibus turpis in eu mi bibendum neque egestas
-            congue. Vitae proin sagittis nisl rhoncus mattis. Egestas congue
-            quisque egestas diam in arcu cursus euismod. Vulputate sapien nec
-            sagittis aliquam. Scelerisque felis imperdiet proin fermentum leo.
-            Nisl rhoncus mattis rhoncus urna neque viverra. Facilisis magna
-            etiam tempor orci eu lobortis. Nulla aliquet enim tortor at auctor
-            urna nunc id cursus.
+            Początkowo profil spółki skupiał się wyłącznie na projektach sieci
+            światłowodowych by finalnie rozszerzyć zakres działania Wykonujemy
+            projekty dla głównych Operatorów telekomunikacyjnych w kraju m.in.
+            Orange Polska S.A. czy Netia S.A. Wspieramy kontrahentów przy
+            największych projektach teletechnicznych o zasięgu ogólnokrajowym
+            m.in.:
+          </p>
+          <p>
+            <ul style={{ marginLeft: "40px" }}>
+              <li>Program Operacyjny Polska Cyfrowa</li>
+              <li>
+                {" "}
+                Budowa infrastruktury systemu ERTMS/GSM-R na liniach kolejowych
+                PKP Polskie Linie Kolejowe S.A.
+              </li>
+            </ul>
+          </p>
+          <p>
+            W miarę upływu czasu rozszerzyliśmy działalność spółki o dział
+            Inżynierii Ruchu Drogowego, w ramach którego Wykonujemy Projekty
+            Organizacji Ruchu Drogowego zapewniając
           </p>
         </AboutText>
         <Map />

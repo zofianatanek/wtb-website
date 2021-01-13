@@ -21,10 +21,10 @@ const Contact = styled.section`
 const ContactSection = styled.section`
   background-color: ${({ theme }) => theme.colors.background.dark};
   display: flex;
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${({ theme }) => theme.device.xxs} {
     flex-direction: column;
   }
-  @media ${({ theme }) => theme.device.sm} {
+  @media ${({ theme }) => theme.device.md} {
     flex-direction: row;
   }
 `
@@ -41,16 +41,23 @@ const ContactInfo = styled.article`
     margin: 0 25px;
   }
   @media ${({ theme }) => theme.device.sm} {
-    padding: 5% 10%;
+    padding: 5% 0;
+    margin: 0 40px;
     width: 60%;
   }
 `
 const MapWrapper = styled.article`
-  @media ${({ theme }) => theme.device.xs} {
+  @media ${({ theme }) => theme.device.xxs} {
     display: flex;
     justify-content: center;
+    text-justify: center;
     z-index: 0;
+    width: 100%;
+    height: 500px;
+  }
+  @media ${({ theme }) => theme.device.md} {
     max-width: 500px;
+    height: 500px;
   }
 `
 
