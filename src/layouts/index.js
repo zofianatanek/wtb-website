@@ -18,7 +18,8 @@ const GlobalStyle = createGlobalStyle`
     margin: 0;
     font-family: 'Montserrat', sans-serif;
     height: 100%;
-    color: ${({ theme }) => theme.colors.text.primary}
+    color: ${({ theme }) => theme.colors.text.primary};
+    overflow-x: hidden;
   }
   button {
     padding: 0;

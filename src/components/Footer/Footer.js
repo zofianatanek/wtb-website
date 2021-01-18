@@ -26,6 +26,7 @@ const FooterWrapper = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    align-items: flex-start;
     width: 100%;
     padding: 32px 16px;
   }
@@ -77,8 +78,8 @@ const AdressWrapper = styled.div`
       font-size: 10px;
     }
   }
-  @media ${({ theme }) => theme.device.lg} {
-    justify-self: center;
+  @media ${({ theme }) => theme.device.md} {
+    margin: 0;
     h2 {
       font-size: 12px;
     }

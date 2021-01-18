@@ -150,16 +150,24 @@ const Navigation = () => {
       <NavigationOverlay nav={nav}>
         <OverlayNavigationList>
           <NavigationListItem>
-            <Link to="/">Strona główna</Link>
+            <Link to="/" onClick={() => showNav(!nav)}>
+              Strona główna
+            </Link>
           </NavigationListItem>
           <NavigationListItem>
-            <Link to="/projects">Projekty</Link>
+            <Link to="/projects" onClick={() => showNav(!nav)}>
+              Projekty
+            </Link>
           </NavigationListItem>
           <NavigationListItem>
-            <Link to="/offer">Oferta</Link>
+            <Link to="/offer" onClick={() => showNav(!nav)}>
+              Oferta
+            </Link>
           </NavigationListItem>
           <NavigationListItem>
-            <Link to="/contact">Kontakt</Link>
+            <Link to="/contact" onClick={() => showNav(!nav)}>
+              Kontakt
+            </Link>
           </NavigationListItem>
         </OverlayNavigationList>
       </NavigationOverlay>

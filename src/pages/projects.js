@@ -5,11 +5,11 @@ import projects from "../components/Project/ProjectsData"
 
 const ProjectsPage = ({ data }) => {
   const sources = [
-    data.gsmr.childImageSharp.fixed,
-    data.popc.childImageSharp.fixed,
-    data.fttx.childImageSharp.fixed,
-    data.dss.childImageSharp.fixed,
-    data.radio.childImageSharp.fixed,
+    data.gsmr.childImageSharp.fluid,
+    data.popc.childImageSharp.fluid,
+    data.fttx.childImageSharp.fluid,
+    data.dss.childImageSharp.fluid,
+    data.radio.childImageSharp.fluid,
   ]
   return (
     <>
@@ -53,37 +53,37 @@ export const query = graphql`
   {
     gsmr: file(name: { eq: "gsmr" }) {
       childImageSharp {
-        fixed(width: 672, height: 448, quality: 100) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 672, maxHeight: 448, quality: 100) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
 
     popc: file(name: { eq: "popc" }) {
       childImageSharp {
-        fixed(width: 672, height: 448, quality: 100) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 672, maxHeight: 448, quality: 100) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
     fttx: file(name: { eq: "fttx" }) {
       childImageSharp {
-        fixed(width: 672, height: 448, quality: 100, grayscale: true) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 672, maxHeight: 448, quality: 100, grayscale: true) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
     dss: file(name: { eq: "dss" }) {
       childImageSharp {
-        fixed(width: 672, height: 488, quality: 100, grayscale: true) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 672, maxHeight: 488, quality: 100, grayscale: true) {
+          ...GatsbyImageSharpFluid
         }
       }
     }
     radio: file(name: { eq: "radio" }) {
       childImageSharp {
-        fixed(width: 491, height: 736, quality: 100, grayscale: true) {
-          ...GatsbyImageSharpFixed
+        fluid(maxWidth: 491, maxHeight: 736, quality: 100, grayscale: true) {
+          ...GatsbyImageSharpFluid
         }
       }
     }

@@ -52,9 +52,14 @@ const ProjectWrapper = styled.section`
   }
 `
 
+const ImageWrapper = styled.div`
+  height: 100%;
+  width: 100%;
+`
+
 /* ${({ theme }) => theme.colors.background.gold}; */
 const Project = ({ color, title, description, image, reverse, details }) => {
-  const data = useStaticQuery(query)
+  // const data = useStaticQuery(query)
   return (
     <ProjectWrapper color={color} reverse={reverse}>
       <div className="description">
@@ -62,7 +67,9 @@ const Project = ({ color, title, description, image, reverse, details }) => {
         <p>{description}</p>
         <p>{details}</p>
       </div>
-      <Img fixed={image} />
+      <ImageWrapper>
+        <Img fluid={image} />
+      </ImageWrapper>
     </ProjectWrapper>
   )
 }
