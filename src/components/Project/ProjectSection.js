@@ -31,10 +31,10 @@ const ProjectWrapper = styled.section`
       : ({ theme }) => theme.colors.background.dark};
 
   justify-content: space-between;
+
   .description {
     align-self: center;
-    max-width: 60%;
-    margin: 80px 40px;
+
     color: ${props =>
       props.color === "gold"
         ? "white"
@@ -49,6 +49,21 @@ const ProjectWrapper = styled.section`
     p {
       text-align: justify;
     }
+    @media ${({ theme }) => theme.device.xxs} {
+      max-width: 100%;
+      margin: 80px 40px;
+    }
+    @media ${({ theme }) => theme.device.md} {
+      max-width: 60%;
+      margin: 80px 40px;
+    }
+  }
+`
+
+const List = styled.ul`
+  margin: 0 20px;
+  li {
+    margin: 8px;
   }
 `
 
@@ -58,14 +73,42 @@ const ImageWrapper = styled.div`
 `
 
 /* ${({ theme }) => theme.colors.background.gold}; */
-const Project = ({ color, title, description, image, reverse, details }) => {
+const Project = ({
+  color,
+  title,
+  description,
+  image,
+  reverse,
+  details,
+  subtitle,
+  list,
+}) => {
   // const data = useStaticQuery(query)
+  const displayList = () => {
+    if (list !== undefined) {
+      return (
+        <List>
+          <li>{list[0]}</li>
+          <li>{list[1]}</li>
+          <li>{list[2]}</li>
+        </List>
+      )
+    }
+  }
+  const displaySubtitle = () => {
+    if (subtitle !== undefined) {
+      return <p>{subtitle}</p>
+    }
+  }
+
   return (
     <ProjectWrapper color={color} reverse={reverse}>
       <div className="description">
         <h2>{title}</h2>
         <p>{description}</p>
         <p>{details}</p>
+        {displaySubtitle()}
+        {displayList()}
       </div>
       <ImageWrapper>
         <Img fluid={image} />

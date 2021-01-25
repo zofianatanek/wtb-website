@@ -10,6 +10,7 @@ const ProjectsPage = ({ data }) => {
     data.fttx.childImageSharp.fluid,
     data.dss.childImageSharp.fluid,
     data.radio.childImageSharp.fluid,
+    data.its.childImageSharp.fluid,
   ]
   return (
     <>
@@ -25,12 +26,14 @@ const ProjectsPage = ({ data }) => {
         color="gold"
         title={projects[1].title}
         description={projects[1].description}
+        details={projects[1].details}
         image={sources[1]}
       ></Project>
       <Project
         color="gold"
         title={projects[2].title}
         description={projects[2].description}
+        details={projects[2].details}
         image={sources[2]}
       ></Project>
       <Project
@@ -38,6 +41,8 @@ const ProjectsPage = ({ data }) => {
         color="grey"
         title={projects[3].title}
         description={projects[3].description}
+        subtitle={projects[3].details.subtitle}
+        list={projects[3].details.list}
         image={sources[3]}
       ></Project>
       <Project
@@ -45,6 +50,14 @@ const ProjectsPage = ({ data }) => {
         title={projects[4].title}
         description={projects[4].description}
         image={sources[4]}
+      ></Project>
+      <Project
+        reverse
+        color="gold"
+        title={projects[5].title}
+        description={projects[5].description}
+        details={projects[5].details}
+        image={sources[5]}
       ></Project>
     </>
   )
@@ -83,6 +96,14 @@ export const query = graphql`
     radio: file(name: { eq: "radio" }) {
       childImageSharp {
         fluid(maxWidth: 491, maxHeight: 736, quality: 100, grayscale: true) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+
+    its: file(name: { eq: "its" }) {
+      childImageSharp {
+        fluid(maxWidth: 672, maxHeight: 488, quality: 100, grayscale: true) {
           ...GatsbyImageSharpFluid
         }
       }

@@ -36,7 +36,7 @@ module.exports = {
             {
               family: "Montserrat",
               variants: ["300", "400", "500"],
-              //subsets: ['latin']
+              subsets: ["latin-ext"],
             },
             {
               family: "Quicksand",
