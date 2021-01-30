@@ -9,12 +9,12 @@ export default class ContactMap extends Component {
       return (
         <MapContainer
           center={this.position}
-          zoom={14}
-          style={{ width: "500px", height: "500px" }}
+          zoom={17}
+          style={{ width: "700px", height: "500px" }}
         >
           <TileLayer
-            url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-            attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+            url={`${process.env.GATSBY_API_URL}`}
+            attribution='Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery &copy; <a href="https://www.mapbox.com/">Mapbox</a>'
           />
           <Marker position={this.position}>
             {" "}

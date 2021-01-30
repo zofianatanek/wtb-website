@@ -21,6 +21,7 @@ const Contact = styled.section`
 const ContactSection = styled.section`
   background-color: ${({ theme }) => theme.colors.background.dark};
   display: flex;
+  justify-content: space-evenly;
   @media ${({ theme }) => theme.device.xxs} {
     flex-direction: column;
   }
@@ -32,6 +33,7 @@ const ContactInfo = styled.article`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
   ul {
     list-style: none;
     font-size: 16px;
@@ -43,7 +45,6 @@ const ContactInfo = styled.article`
   @media ${({ theme }) => theme.device.sm} {
     padding: 5% 0;
     margin: 0 40px;
-    width: 60%;
   }
 `
 const MapWrapper = styled.article`
@@ -56,7 +57,7 @@ const MapWrapper = styled.article`
     height: 500px;
   }
   @media ${({ theme }) => theme.device.md} {
-    max-width: 500px;
+    max-width: 700px;
     height: 500px;
   }
 `
