@@ -27,7 +27,6 @@ const StyledImg = styled(Img)`
     height: calc(100vh - 72px);
     width: calc(100vw / 3);
     margin: auto 0;
-    height: calc(100vh - 72px);
   }
 `
 const Overlay = styled.div`
@@ -90,6 +89,7 @@ const ImageWrapper = styled.div`
     height: calc(100vh - 72px);
     width: calc(100vw / 3);
     &:hover {
+      height: calc(100vh - 72px);
       ${Overlay} {
         height: 100%;
       }
