@@ -2,6 +2,16 @@ import React from "react"
 import styled from "styled-components"
 
 const StyledMap = styled.svg`
+  height: auto;
+  @media ${({ theme }) => theme.device.xxs} {
+    width: 250px;
+  }
+  @media ${({ theme }) => theme.device.sm} {
+    width: 350px;
+  }
+  @media ${({ theme }) => theme.device.md} {
+    width: 500px;
+  }
   @keyframes color {
     from {
       fill: #b6bac0;
@@ -55,7 +65,10 @@ const StyledMap = styled.svg`
     animation-duration: 3s;
     animation-delay: 9s;
   }
-  margin-right: 40px;
+  #warminsko_mazurskie {
+    animation-duration: 2s;
+    animation-delay: 10s;
+  }
 `
 class Map extends React.Component {
   state = {
@@ -68,7 +81,7 @@ class Map extends React.Component {
         this.SwitchState()
       }, 2000)
       this.SwitchState()
-    }, 12000)
+    }, 14000)
   }
 
   SwitchState() {
@@ -80,8 +93,6 @@ class Map extends React.Component {
       <>
         <StyledMap
           xmlns="http://www.w3.org/2000/svg"
-          width="260px"
-          height="auto"
           fill="none"
           viewBox="0 0 414 389"
           // className={this.className}
@@ -128,6 +139,9 @@ class Map extends React.Component {
             ></path>
             <path
               id="warminsko_mazurskie"
+              className={`${
+                this.state.animation === true ? "active" : "disabled"
+              }`}
               d="M357.231 32.688l-1.04 1.92-.769.627-2.819.927-7.697-.402-9.542-.51-11.388-.606-11.387-.598-17.737-.949-14.646-.773-11.82-.628-11.819-.627-15.855-.847-8.451-.452-.161.087-.454-.043.073.313.11.76.073.32-.644.132-.322.693-.22.766-.351.365-.594.087-.549.227-2.651 1.948-1.611.226-.674.277-3.185 2.014-.52.124-.52.336-1.04.97-1.033 1.686-.263.262-.278.416-.725 1.905-.55.54.03-1.022.161-.846.293-.628.388-.365v-.518l-.96.124-3.647-.474-.988 1.13-.286 2.38.901 2.677.842 1.489.432 1.744-.468 1.277-.638 1.123-1.786 1.81-.652.97.11 1.365.739 2.984 1.37 2.255 1.977 1.167 2.102.277 1.069 1.452-.798 2.73 1.457.707 4.05-.328 2.05.554-.161 1.124v1.16l-.498.912-.747.759-.644 1.97-.491.759-.08 1.116-2.315 1.022-3.302-.22-1.714 1.08-1.45 1.577-6.042 11.236 3.545 6.896 1.01 2.947 1.245 2.343.637.919.96.409.776.036 3.134 1.036 4.38 2.627 4.672 1.226 2.277 1.598 2.117 5.341.608 6.216 1.413-.357 1.186-.985 1.055-2.094 1.626-.504.703.154.637.437.263.599.359.43 12.925 1.992 3.076-.569 1.238-.62 1.062-1.241.695-2.298 1.267-.985 1.575.168 1.494-.445 5.726-3.306 1.355-1.612 1.479-1.204 2.93.036 2.599-.54 3.003-1.729 3.911.015 3.683-1.175 3.105-3.692 3.632.343 1.86-.285 1.67-1.182 1.172-2.313 1.01-.547 4.951-.38 2.973-1.306 5.859.344 2.57-.913 1.201-.948 1.296-.547 3.054-.46 7.067-4.838 3.976-4.494 11.402-7.07 2.351-2.482 1.428-4.027 1.663-3.174.146-3.233-4.343-6.07-2.079-2.036-.432-1.926-.227-2.072-4.131-5.524 3.845-5.465 9.132-1.284 2.717-1.839 2.336-2.444 1.032-3.386-.102-.533z"
             ></path>
             <path
@@ -148,6 +162,9 @@ class Map extends React.Component {
             ></path>
             <path
               id="podkarpackie"
+              className={`${
+                this.state.animation === true ? "active" : "disabled"
+              }`}
               stroke="#F9F9F9"
               strokeLinecap="round"
               strokeLinejoin="round"
@@ -178,6 +195,9 @@ class Map extends React.Component {
             ></path>
             <path
               id="lubelskie"
+              className={`${
+                this.state.animation === true ? "active" : "disabled"
+              }`}
               stroke="#F9F9F9"
               strokeLinecap="round"
               strokeLinejoin="round"

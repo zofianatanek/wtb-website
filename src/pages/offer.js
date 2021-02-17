@@ -38,6 +38,9 @@ const Overlay = styled.div`
   justify-content: center;
   align-items: center;
   transition: height 1.5s;
+  h2 {
+    margin-bottom: 40px;
+  }
   @media ${({ theme }) => theme.device.xxs} {
     width: 100%;
     height: 50px;
@@ -55,6 +58,9 @@ const OverlayContent = styled.div`
   padding: 0 20px;
   flex-direction: column;
   transition: height 1.5s;
+  p {
+    line-height: 2;
+  }
   ul {
     margin: 0 20px;
     li {
@@ -139,7 +145,14 @@ const OfferPage = ({ data }) => (
         <Overlay bottom>
           <h2>Inżynieria Ruchu Drogowego</h2>
           <OverlayContent>
-            <h4>Wykonujemy:</h4>
+            <p>
+              Inżynieria ruchu odpowiada za planowanie, projektowanie i
+              organizację bezpieczeństwa ruchu drogowego. Zarówno w zakresie
+              organizacji ruchu stałego, jak i wykonywaniem projektów czasowych
+              np. w przypadku remontów dróg lub innych prac ziemnych czy
+              budowlanych, które bezpośrednio wpływają na pas drogowy.
+              Zapewniamy bezpieczeństwo wykonując:
+            </p>
             <ul>
               <li>Projekty Czasowej Organizacji Ruchu</li>
               <li>Projekty Odbudowy Nawierzchni</li>
@@ -155,10 +168,15 @@ const OfferPage = ({ data }) => (
         <Overlay>
           <h2>Sieci Radiowe</h2>
           <OverlayContent>
-            <h4>Oferujemy:</h4>
+            <p>
+              Usługi sieciowe mają kluczowe znaczenie dla ewolucji 5G, IoT i
+              cyfryzacji przemysłowej, aby zapewnić płynne Roll Out-y wspieramy
+              klientów w zakresie:
+            </p>
             <ul>
-              <li>Lorem ipsum dolor</li>
-              <li>Lorem ipsum dolor</li>
+              <li>Projektów wstępnych</li>
+              <li>Projektów wykonawczych</li>
+              <li>Dokumentacji powykonawczych</li>
             </ul>
           </OverlayContent>
         </Overlay>

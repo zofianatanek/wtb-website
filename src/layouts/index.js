@@ -1,8 +1,20 @@
-import React from "react"
+import React, { useCallback } from "react"
+import { Helmet } from "react-helmet"
+import { graphql, useStaticQuery } from "gatsby"
 import { ThemeProvider, createGlobalStyle } from "styled-components"
+import { theme } from "../utils/theme"
 import Navigation from "../components/Navigation/Navigation"
 import Footer from "../components/Footer/Footer"
-import { theme } from "../utils/theme"
+
+const query = graphql`
+  {
+    site {
+      siteMetadata {
+        author
+      }
+    }
+  }
+`
 
 const GlobalStyle = createGlobalStyle`
     html {
@@ -50,15 +62,36 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const MainLayout = ({ children }) => (
-  <ThemeProvider theme={theme}>
-    <>
-      <GlobalStyle />
-      <Navigation />
-      {children}
-      <Footer />
-    </>
-  </ThemeProvider>
-)
+const MainLayout = ({ children }) => {
+  const data = useStaticQuery(query)
+  return (
+    <ThemeProvider theme={theme}>
+      <Helmet>
+        <title>{data.site.siteMetadata.title}</title>
+        <meta
+          name="description"
+          content={data.site.siteMetadata.description}
+        ></meta>
+        <meta name="keywords" content={data.site.siteMetadata.keywords}></meta>
+        <meta property="og:title" content={data.site.siteMetadata.title}></meta>
+        <meta property="og:type" content="website"></meta>
+        <meta
+          property="og:description"
+          content={data.site.siteMetadata.description}
+        ></meta>
+        <meta property="og:image" content=""></meta>
+        <meta property="og:locale" content="pl_PL"></meta>
+        <meta property="og:url" content=""></meta>
+        <link rel="canonical" href="" />
+      </Helmet>
+      <>
+        <GlobalStyle />
+        <Navigation />
+        {children}
+        <Footer />
+      </>
+    </ThemeProvider>
+  )
+}
 
 export default MainLayout

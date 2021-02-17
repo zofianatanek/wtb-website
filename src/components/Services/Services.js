@@ -77,6 +77,28 @@ const query = graphql`
         }
       }
     }
+
+    telecomXL: file(name: { eq: "telecom" }) {
+      childImageSharp {
+        fixed(width: 380, height: 204, grayscale: true) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    radioXL: file(name: { eq: "radio" }) {
+      childImageSharp {
+        fixed(width: 380, height: 204, grayscale: true) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    signsXL: file(name: { eq: "signs" }) {
+      childImageSharp {
+        fixed(width: 381, height: 204, quality: 100, grayscale: true) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
   }
 `
 
@@ -167,10 +189,8 @@ const ImgWrapper = styled.div`
     .more {
       display: block;
       text-align: right;
-      .link {
-        color: ${({ theme }) => theme.colors.text.title};
-        margin: 12px;
-      }
+      color: ${({ theme }) => theme.colors.text.title};
+      margin: 12px;
     }
   }
 `
@@ -192,7 +212,7 @@ const Services = () => {
       media: `(min-width: ${theme.breakpoints.md}) and (max-width: ${theme.breakpoints.xl})`,
     },
     {
-      ...data.telecomM.childImageSharp.fixed,
+      ...data.telecomXL.childImageSharp.fixed,
       media: `${theme.device.xl}`,
     },
   ]
@@ -210,7 +230,7 @@ const Services = () => {
       media: `(min-width: ${theme.breakpoints.md}) and (max-width: ${theme.breakpoints.xl})`,
     },
     {
-      ...data.radioM.childImageSharp.fixed,
+      ...data.radioXL.childImageSharp.fixed,
       media: `${theme.device.xl}`,
     },
   ]
@@ -228,7 +248,7 @@ const Services = () => {
       media: `(min-width: ${theme.breakpoints.md}) and (max-width: ${theme.breakpoints.xl})`,
     },
     {
-      ...data.signsM.childImageSharp.fixed,
+      ...data.signsXL.childImageSharp.fixed,
       media: `${theme.device.xl}`,
     },
   ]
@@ -237,40 +257,40 @@ const Services = () => {
       <h1>Sektory usług</h1>
       <ServicesCategoriesWrapper className="services">
         <ImgWrapper>
-          <Overlay className="overlay"></Overlay>
-          <Title className="title">
-            <h3>Telekomunikacja</h3>
-            <p className="more">
-              <Link to="/offer" className="link">
+          <Link to="/offer" className="link">
+            <Overlay className="overlay"></Overlay>
+            <Title className="title">
+              <h3>Telekomunikacja</h3>
+              <p className="more">
                 Wiecej <RightOutlined />
-              </Link>
-            </p>
-          </Title>
+              </p>
+            </Title>
+          </Link>
           <Img fixed={imageTelecom} />
         </ImgWrapper>
         <ImgWrapper>
-          <Overlay className="overlay"></Overlay>
-          <Title className="title">
-            <h3>Sieci radiowe</h3>
-            <p className="more">
-              <Link to="/offer" className="link">
+          <Link to="/offer" className="link">
+            <Overlay className="overlay"></Overlay>
+            <Title className="title">
+              <h3>Inżynieria Ruchu Drogowego</h3>
+              <p className="more">
                 Wiecej <RightOutlined />
-              </Link>
-            </p>
-          </Title>
-          <Img fixed={imageRadio} />
+              </p>
+            </Title>
+          </Link>
+          <Img fixed={imageCivilEngineering} />
         </ImgWrapper>
         <ImgWrapper>
-          <Overlay className="overlay"></Overlay>
-          <Title className="title">
-            <h3>Inżynieria Ruchu Drogowego</h3>
-            <p className="more">
-              <Link to="/offer" className="link">
+          <Link to="/offer" className="link">
+            <Overlay className="overlay"></Overlay>
+            <Title className="title">
+              <h3>Sieci radiowe</h3>
+              <p className="more">
                 Wiecej <RightOutlined />
-              </Link>
-            </p>
-          </Title>
-          <Img fixed={imageCivilEngineering} />
+              </p>
+            </Title>
+          </Link>
+          <Img fixed={imageRadio} />
         </ImgWrapper>
       </ServicesCategoriesWrapper>
     </ServicesWrapper>

@@ -3,9 +3,11 @@ require("dotenv").config({
 })
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
+    title: `WTB Telecom`,
+    description: `WTB Telecom biuro projektów telekomunikacyjnych i inżynierii ruchu drogowego`,
+    author: `zofianatanek`,
+    keywords: `telekomunikacja, światłowody, inżynieria ruchu drogowego, sieci radiowe`,
+    url: `wtb-telecom.pl`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,

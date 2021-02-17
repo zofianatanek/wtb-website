@@ -1,5 +1,6 @@
 import React from "react"
 import styled from "styled-components"
+import { Link } from "gatsby"
 import Map from "./Map"
 
 const AboutSection = styled.section`
@@ -7,8 +8,7 @@ const AboutSection = styled.section`
   box-sizing: border-box;
   margin: 60px 0px;
   background-color: ${({ theme }) => theme.colors.background.dark};
-`
-const AboutWrapper = styled.section`
+  text-align: center;
   @media ${({ theme }) => theme.device.sm} {
     display: flex;
     flex-direction: column;
@@ -19,55 +19,85 @@ const AboutWrapper = styled.section`
     padding-right: 60px;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: space-around;
   }
 `
+
 const AboutText = styled.section`
+  height: 100%;
   text-align: justify;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   @media ${({ theme }) => theme.device.xs} {
     width: 100%;
   }
   @media ${({ theme }) => theme.device.xl} {
     width: 50vw;
   }
+  article:first-of-type {
+    line-height: 1.5;
+  }
+  article.quote {
+    margin: 60px 0 0 0;
+    p:first-of-type {
+      font-style: italic;
+    }
+    p:nth-of-type(2) {
+      text-align: right;
+    }
+  }
+
+  .offer {
+    color: ${({ theme }) => theme.colors.text.title};
+  }
 `
 
 const About = () => (
   <>
     <AboutSection>
-      <h1>O firmie</h1>
-      <AboutWrapper>
-        <AboutText>
+      <AboutText>
+        <article>
           <p>
-            WTB Telecom Sp. z o.o. powstała w odpowiedzi na coraz większe
-            zapotrzebowanie rynku na wysokiej klasy usługi inżynieryjne.
+            Działalność firmy skoncentrowana jest wokół szeroko pojętego
+            budownictwa teletechnicznego. Na swoim koncie mamy realizację
+            projektów dla czołowych firm sektora telekomunikacyjnego takich jak
+            operatorzy Orange Polska S.A. oraz Netia S.A. jak również
+            przedstawicieli sektora publicznego między innymi Tauron Obsługa
+            Klienta Sp. z o.o. oraz PKP PLK S.A. .{" "}
           </p>
           <p>
-            Początkowo profil spółki skupiał się wyłącznie na projektach sieci
-            światłowodowych by finalnie rozszerzyć zakres działania Wykonujemy
-            projekty dla głównych Operatorów telekomunikacyjnych w kraju m.in.
-            Orange Polska S.A. czy Netia S.A. Wspieramy kontrahentów przy
-            największych projektach teletechnicznych o zasięgu ogólnokrajowym
-            m.in.:
+            Zaprojektowaliśmy blisko 10 tys kilometrów linii światłowodowych na
+            terenie 11 województw. Braliśmy udział między innymi w takich
+            projektach jak GSMR realizowany dla Polskich Kolei Państwowych oraz
+            Program Operacyjny Polska Cyfrowa.{" "}
           </p>
           <p>
-            <ul style={{ marginLeft: "40px" }}>
-              <li>Program Operacyjny Polska Cyfrowa</li>
-              <li>
-                {" "}
-                Budowa infrastruktury systemu ERTMS/GSM-R na liniach kolejowych
-                PKP Polskie Linie Kolejowe S.A.
-              </li>
-            </ul>
+            Wspieramy klienta na każdym etapie projektu zapewniając kompleksową
+            realizację rozpoczynającą się na obsłudze geodezyjnej poprzez
+            wykonanie projektu budowlano-wykonawczego kończąc na uzgodnieniu
+            Projektu Organizacji Ruchu i przekazaniu kompletnej dokumentacji
+            pozwalającej przystąpić do budowy.
           </p>
           <p>
-            W miarę upływu czasu rozszerzyliśmy działalność spółki o dział
-            Inżynierii Ruchu Drogowego, w ramach którego Wykonujemy Projekty
-            Organizacji Ruchu Drogowego zapewniając
+            Szczegółowe informacje znajdą Państwo w dziale{" "}
+            <Link className="offer" to="/offer">
+              Oferta
+            </Link>{" "}
+            .
           </p>
-        </AboutText>
-        <Map />
-      </AboutWrapper>
+        </article>
+        <article className="quote">
+          <p>
+            Spółka nieograniczonych możliwości. Tak w skrócie mógłbym określić
+            poczucie jakie daje mi współpraca z ludźmi tworzącymi WTB Telecom.
+          </p>
+          <p>
+            Łukasz Wojtczak <br></br>Prezes Zarządu
+          </p>
+        </article>
+      </AboutText>
+      <Map />
     </AboutSection>
   </>
 )

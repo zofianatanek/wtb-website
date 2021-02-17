@@ -18,7 +18,15 @@ const ListWrapper = styled.div`
   margin-right: auto;
 `
 const ImageList = styled.ul`
-  animation: move 60s linear infinite;
+  @media ${({ theme }) => theme.device.xxs} {
+    animation: move 20s linear infinite;
+  }
+  @media ${({ theme }) => theme.device.md} {
+    animation: move 40s linear infinite;
+  }
+  @media ${({ theme }) => theme.device.xl} {
+    animation: move 40s linear infinite;
+  }
   display: flex;
   li {
     display: flex;
@@ -30,7 +38,7 @@ const ImageList = styled.ul`
       transform: translate(100%, 0);
     }
     100% {
-      transform: translate(-200%, 0);
+      transform: translate(-100%, 0);
     }
   }
 `
@@ -100,6 +108,20 @@ const query = graphql`
         }
       }
     }
+    impel: file(name: { eq: "impel" }) {
+      childImageSharp {
+        fixed(width: 159, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    axians: file(name: { eq: "axians" }) {
+      childImageSharp {
+        fixed(width: 159, quality: 100) {
+          ...GatsbyImageSharpFixed
+        }
+      }
+    }
   }
 `
 
@@ -125,7 +147,15 @@ const Partners = () => {
           </li>
           <li>
             {" "}
+            <Img fixed={data.impel.childImageSharp.fixed} />
+          </li>
+          <li>
+            {" "}
             <Img fixed={data.ecs.childImageSharp.fixed} />
+          </li>
+          <li>
+            {" "}
+            <Img fixed={data.axians.childImageSharp.fixed} />
           </li>
           <li>
             {" "}
