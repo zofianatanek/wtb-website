@@ -27,47 +27,47 @@ const StyledMap = styled.svg`
     animation-name: color;
   }
   #lubuskie {
-    animation-duration: 12s;
+    animation-duration: 9s;
   }
   #dolnoslaskie {
-    animation-duration: 11s;
-    animation-delay: 1s;
+    animation-duration: 8.25s;
+    animation-delay: 0.75s;
   }
   #wielkopolskie {
-    animation-duration: 10s;
-    animation-delay: 2s;
+    animation-duration: 7.5s;
+    animation-delay: 1.5s;
   }
   #opolskie {
-    animation-duration: 9s;
-    animation-delay: 3s;
+    animation-duration: 6.75s;
+    animation-delay: 2.25s;
   }
   #slaskie {
-    animation-duration: 8s;
-    animation-delay: 4s;
+    animation-duration: 6s;
+    animation-delay: 3s;
   }
   #lodzkie {
-    animation-duration: 7s;
-    animation-delay: 5s;
+    animation-duration: 5.25s;
+    animation-delay: 3.75s;
   }
   #swietokrzyskie {
-    animation-duration: 6s;
-    animation-delay: 6s;
+    animation-duration: 4.5s;
+    animation-delay: 4.5s;
   }
   #malopolskie {
-    animation-duration: 5s;
-    animation-delay: 7s;
+    animation-duration: 3.75s;
+    animation-delay: 5.25s;
   }
   #podkarpackie {
-    animation-duration: 4s;
-    animation-delay: 8s;
+    animation-duration: 3s;
+    animation-delay: 6s;
   }
   #lubelskie {
-    animation-duration: 3s;
-    animation-delay: 9s;
+    animation-duration: 2.25s;
+    animation-delay: 6.75s;
   }
   #warminsko_mazurskie {
-    animation-duration: 2s;
-    animation-delay: 10s;
+    animation-duration: 1.5s;
+    animation-delay: 7.5s;
   }
 `
 class Map extends React.Component {
@@ -79,9 +79,9 @@ class Map extends React.Component {
     this.timerID = setInterval(() => {
       setTimeout(() => {
         this.SwitchState()
-      }, 2000)
+      }, 1500)
       this.SwitchState()
-    }, 14000)
+    }, 9000)
   }
 
   SwitchState() {
