@@ -191,7 +191,7 @@ const WebsiteMapWrapper = styled.div`
     }
   }
   @media ${({ theme }) => theme.device.xxs} {
-    margin: 10px 0;
+    /* margin: 10px 0; */
     align-self: center;
     justify-self: flex-start;
     .offer {
@@ -229,9 +229,10 @@ const WebsiteMapWrapper = styled.div`
     }
   }
   @media ${({ theme }) => theme.device.xxl} {
-    align-self: auto;
+    align-self: flex-start;
     .offer {
       font-size: 18px;
+      line-height: 22px;
     }
     .navigation {
       display: flex;
